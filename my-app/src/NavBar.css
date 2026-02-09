@@ -1009,3 +1009,35 @@ html[dir="rtl"] .auth-dropdown {
     border-radius: 12px !important;
   }
 }
+
+/* ===== FINAL CLEANUP - PREVENT NAVBAR HEIGHT EXPANSION ===== */
+.auth-menu-container { position: relative !important; width: auto !important; height: auto !important; }
+
+.auth-dropdown, .dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  z-index: 2147483647 !important; /* Max integer value */
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  transform: none !important; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2) !important;
+}
+
+/* Ensure navbar doesn't clip or expand */
+.navbar-wrapper, .sticky-wrapper, .main-header, .header-container {
+  overflow: visible !important;
+  height: auto !important; /* Don't lock height, but don't expand for absolute items */
+}
+
+/* On mobile, ensure dropdown doesn't affect flow */
+@media (max-width: 900px) {
+  .auth-dropdown {
+    top: 50px !important; /* Push it down a bit if needed */
+    right: 10px !important;
+    left: auto !important;
+    width: 200px !important;
+  }
+}
