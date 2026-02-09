@@ -60,8 +60,6 @@ export const translations = {
         cart_title: "سلة التسوق",
         continue_shopping: "متابعة التسوق",
         subtotal: "المجموع الفرعي",
-        shipping: "الشحن",
-        shipping_free: "مجاني",
         proceed_checkout: "متابعة للدفع",
 
         // Checkout Form
@@ -89,7 +87,6 @@ export const translations = {
         save_address: "حفظ العنوان",
         cancel: "إلغاء",
         select_address_desc: "اختر عنوان التوصيل",
-        shipping: "الشحن",
         shipping_address: "عنوان الشحن",
 
         // Product Details
@@ -195,7 +192,6 @@ export const translations = {
         save_address: "Save Address",
         cancel: "Cancel",
         select_address_desc: "Select where you want your order delivered",
-        shipping: "Shipping",
         shipping_address: "Shipping Address",
 
         // Product Details

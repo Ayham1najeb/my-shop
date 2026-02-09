@@ -14,7 +14,7 @@ const ProductReviews = ({ productId }) => {
     const [submitted, setSubmitted] = useState(false);
     const { language } = useLanguage();
 
-    const fetchReviews = async () => {
+    const fetchReviews = React.useCallback(async () => {
         try {
             const response = await fetch(`${API_URL}/api/products/${productId}/reviews`, {
                 headers: {
@@ -24,7 +24,21 @@ const ProductReviews = ({ productId }) => {
             const data = await response.json();
             if (Array.isArray(data)) {
                 setReviews(data);
-                calculateStats(data);
+
+                // Calculate stats locally
+                if (data.length > 0) {
+                    const total = data.length;
+                    const sum = data.reduce((acc, curr) => acc + curr.rating, 0);
+                    const average = (sum / total).toFixed(1);
+
+                    const breakdown = [0, 0, 0, 0, 0];
+                    data.forEach(r => {
+                        if (r.rating >= 1 && r.rating <= 5) {
+                            breakdown[5 - r.rating]++;
+                        }
+                    });
+                    setStats({ average, total, breakdown });
+                }
             } else {
                 console.error("API returned non-array:", data);
                 setReviews([]);
@@ -34,31 +48,15 @@ const ProductReviews = ({ productId }) => {
             console.error("Error loading reviews", error);
             setLoading(false);
         }
-    };
-
-    const calculateStats = (data) => {
-        if (!data.length) return;
-        const total = data.length;
-        const sum = data.reduce((acc, curr) => acc + curr.rating, 0);
-        const average = (sum / total).toFixed(1);
-
-        const breakdown = [0, 0, 0, 0, 0];
-        data.forEach(r => {
-            if (r.rating >= 1 && r.rating <= 5) {
-                breakdown[5 - r.rating]++; // Index 0 is 5 stars, Index 4 is 1 star
-            }
-        });
-
-        setStats({ average, total, breakdown });
-    };
+    }, [productId]);
 
     useEffect(() => {
         if (productId) {
-            setReviews([]); // Clear old reviews immediately
+            setReviews([]);
             setLoading(true);
             fetchReviews();
         }
-    }, [productId]);
+    }, [productId, fetchReviews]);
 
     const submitReview = async (e) => {
         e.preventDefault();

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductContext } from '../ProductContext';
 import { useLanguage } from '../LanguageContext';
-import { FaBox, FaCheck, FaTruck, FaArrowRight, FaArrowLeft, FaShoppingBag, FaBoxOpen } from 'react-icons/fa';
+import { FaBox, FaCheck, FaTruck, FaArrowRight, FaArrowLeft, FaBoxOpen } from 'react-icons/fa';
 import './Orders.css';
 
 const Orders = () => {

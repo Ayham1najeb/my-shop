@@ -21,10 +21,10 @@ const ProductsByCategory = () => {
     // add more mappings if your URL params differ from internal IDs
   };
 
-  const getCategory = (name) => {
+  const getCategory = React.useCallback((name) => {
     if (!name) return 'all';
     return categoryMap[name.toLowerCase()] || name.toLowerCase();
-  };
+  }, []);
 
   const initialCategory = getCategory(categoryName);
 
@@ -44,7 +44,7 @@ const ProductsByCategory = () => {
   useEffect(() => {
     const newCategory = getCategory(categoryName);
     setFilters(prev => ({ ...prev, categories: [newCategory] }));
-  }, [categoryName]);
+  }, [categoryName, getCategory]);
 
   // Data Augmentation (Mocking Brands, Colors, Ratings for Demo)
   // COPY OF LOGIC FROM Products.jsx to ensure consistency
