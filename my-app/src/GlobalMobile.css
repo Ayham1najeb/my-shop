@@ -284,3 +284,83 @@
         overflow: hidden !important;
     }
 }
+/* ===== HERO SLIDER MOBILE FIXES ===== */
+@media (max-width: 767px) {
+    .hero-slider-wrapper {
+        margin-top: 10px !important;
+        padding: 0 5px !important;
+    }
+    
+    .hero-slide-content {
+        min-height: 200px !important;
+        border-radius: 12px !important;
+        padding: 10px !important;
+    }
+    
+    .hero-image {
+        height: 100px !important;
+        width: 100% !important;
+    }
+    
+    .hero-image img {
+        max-height: 100% !important;
+        object-fit: contain !important;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-text p {
+        font-size: 0.75rem !important;
+    }
+    
+    .hero-btn {
+        padding: 6px 14px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ===== CATEGORIES CARD HEIGHT FIX ===== */
+@media (max-width: 767px) {
+    .category-card.holo-interactive {
+        height: 140px !important;
+        border-radius: 16px !important;
+    }
+    
+    .cat-overlay {
+        padding: 15px !important;
+    }
+    
+    .cat-icon-box {
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .cat-name {
+        font-size: 0.85rem !important;
+    }
+    
+    .categories-container {
+        padding: 40px 0 !important;
+    }
+    
+    .categories-container .section-title {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* ===== PRODUCTS FILTER/SORT MOBILE FIXES ===== */
+@media (max-width: 767px) {
+    .sort-wrapper select {
+        min-width: 120px !important;
+        max-width: 150px !important;
+        padding: 8px 12px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .sort-wrapper span {
+        font-size: 0.75rem !important;
+    }
+}
