@@ -894,3 +894,15 @@ html[dir="rtl"] .auth-dropdown {
 .dropdown-menu { z-index: 10001 !important; }
 .user-menu-container { z-index: 10000 !important; }
 .auth-dropdown { z-index: 10001 !important; }
+
+/* ===== FIX NAVBAR AND DROPDOWN Z-INDEX HIERARCHY ===== */
+.navbar-wrapper { z-index: 10000 !important; position: relative !important; }
+.sticky-wrapper { z-index: 10000 !important; }
+.sticky-active { z-index: 10000 !important; }
+.header-main { z-index: 10001 !important; position: relative !important; }
+.auth-menu-container { z-index: 10002 !important; position: relative !important; }
+.dropdown-menu { z-index: 10003 !important; }
+.user-menu-container { z-index: 10002 !important; position: relative !important; }
+
+/* Lower z-index for page sections */
+.about-hero, .contact-hero, .hero-section, .page-hero { z-index: 1 !important; position: relative !important; }

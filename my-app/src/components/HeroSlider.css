@@ -230,3 +230,12 @@
   .hero-text p { font-size: 0.7rem !important; -webkit-line-clamp: 3; }
   .hero-btn { padding: 7px 14px !important; font-size: 0.7rem !important; }
 }
+
+/* ===== INCREASE SLIDER HEIGHT TO 250PX ===== */
+@media (max-width: 767px) {
+  .hero-slide-content { height: 250px !important; min-height: 250px !important; max-height: 250px !important; }
+  .hero-text h1 { font-size: 1.2rem !important; }
+  .hero-text p { font-size: 0.75rem !important; }
+  .hero-btn { padding: 8px 16px !important; font-size: 0.75rem !important; }
+  .hero-image { width: 45% !important; }
+}
