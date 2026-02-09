@@ -592,3 +592,51 @@
         z-index: 10 !important;
     }
 }
+/* ===== FORCE HIDE ALL OLD SLICK-DOTS RULES ===== */
+@media (max-width: 767px) {
+  /* Override ALL previous slick-dots rules */
+  .slick-dots,
+  .hero-slider-wrapper > .slick-dots,
+  .slick-slider > .slick-dots {
+    display: none !important;
+  }
+  
+  /* Show ONLY this specific one */
+  .hero-slider-wrapper .slick-list + .slick-dots {
+    display: flex !important;
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    z-index: 10 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .hero-slider-wrapper .slick-list + .slick-dots li {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 !important;
+  }
+  
+  .hero-slider-wrapper .slick-list + .slick-dots li button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.6) !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+  }
+  
+  .hero-slider-wrapper .slick-list + .slick-dots li.slick-active button {
+    background: #3BA3D9 !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
