@@ -41,20 +41,20 @@ const DashboardHome = () => {
         { name: 'يوليو', sales: 3490 },
     ];
 
-    const mockTopProducts = [
+    /* const mockTopProducts = [
         { name: 'تيشيرت قطني', sales: 400 },
         { name: 'حذاء ركض', sales: 300 },
         { name: 'ساعة ذكية', sales: 250 },
         { name: 'بنطال جينز', sales: 200 },
         { name: 'حقيبة ظهر', sales: 150 },
-    ];
+    ]; */
 
-    const mockOrderStatus = [
+    /* const mockOrderStatus = [
         { name: 'تم التوصيل', value: 45, color: '#10b981' },
         { name: 'قيد التجهيز', value: 25, color: '#f59e0b' },
         { name: 'تم الشحن', value: 20, color: '#3b82f6' },
         { name: 'ملغي', value: 10, color: '#ef4444' },
-    ];
+    ]; */
 
 
     const [isLoading, setIsLoading] = useState(false);
@@ -138,11 +138,11 @@ const DashboardHome = () => {
         document.body.removeChild(link);
     };
 
-    const handleLogout = () => {
+    /* const handleLogout = () => {
         localStorage.removeItem('auth_token');
         localStorage.removeItem('user_info');
         window.location.href = "/";
-    };
+    }; */
 
     return (
         <div className="dashboard-home">

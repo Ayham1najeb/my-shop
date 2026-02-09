@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaLinkedin, FaInstagram, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, /* FaLinkedin, */ FaInstagram, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import "./Contact.css";
 
@@ -127,10 +127,10 @@ const Contact = () => {
             <div className="social-links">
               <h3>{t.followUs}</h3>
               <div className="icons">
-                <a href="#" className="social-icon facebook"><FaFacebook /></a>
-                <a href="#" className="social-icon instagram"><FaInstagram /></a>
-                <a href="#" className="social-icon twitter"><SiX /></a>
-                <a href="#" className="social-icon whatsapp"><FaWhatsapp /></a>
+                <a href="#facebook" className="social-icon facebook"><FaFacebook /></a>
+                <a href="#instagram" className="social-icon instagram"><FaInstagram /></a>
+                <a href="#twitter" className="social-icon twitter"><SiX /></a>
+                <a href="#whatsapp" className="social-icon whatsapp"><FaWhatsapp /></a>
               </div>
             </div>
           </div>

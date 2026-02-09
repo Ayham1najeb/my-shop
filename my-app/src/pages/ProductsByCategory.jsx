@@ -4,27 +4,27 @@ import { ProductContext } from "../ProductContext";
 import ProductSidebar from "../components/ProductSidebar";
 import { FaShoppingCart, FaEye, FaStar, FaSortAmountDown, FaGem } from "react-icons/fa";
 
+// Map URL param to internal category IDs if needed, or just use as is
+// Adjust this map based on your actual data structure in Products.jsx
+const categoryMap = {
+  men: 'men',
+  women: 'women',
+  kids: 'kids',
+  jewelery: 'jewelery',
+  electronics: 'electronics',
+  // add more mappings if your URL params differ from internal IDs
+};
+
 const ProductsByCategory = () => {
   const { categoryName } = useParams();
   const { products, setSelectedProduct, addToCart } = useContext(ProductContext);
   const discountedIds = [3, 8, 11, 6, 9];
   const discountRate = 0.7;
 
-  // Map URL param to internal category IDs if needed, or just use as is
-  // Adjust this map based on your actual data structure in Products.jsx
-  const categoryMap = {
-    men: 'men',
-    women: 'women',
-    kids: 'kids',
-    jewelery: 'jewelery',
-    electronics: 'electronics',
-    // add more mappings if your URL params differ from internal IDs
-  };
-
   const getCategory = React.useCallback((name) => {
     if (!name) return 'all';
     return categoryMap[name.toLowerCase()] || name.toLowerCase();
-  }, [categoryMap]);
+  }, []);
 
   const initialCategory = getCategory(categoryName);
 
