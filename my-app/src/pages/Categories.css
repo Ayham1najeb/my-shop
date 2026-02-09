@@ -345,3 +345,28 @@
     gap: 6px !important;
   }
 }
+/* ===== NUCLEAR OPTION: FORCE CATEGORY CARDS SIZE ===== */
+@media (max-width: 767px) {
+  /* Force small cards */
+  .category-card,
+  .category-card.holo-interactive,
+  .holo-interactive.category-card {
+    height: 110px !important;
+    max-height: 110px !important;
+    min-height: 110px !important;
+  }
+  
+  /* Force grid */
+  .categories-grid,
+  .categories-container .categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  
+  /* Force text size */
+  .cat-name,
+  .category-card .cat-name {
+    font-size: 0.75rem !important;
+    max-font-size: 0.75rem !important;
+  }
+}
