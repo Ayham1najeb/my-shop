@@ -979,3 +979,33 @@ html[dir="rtl"] .auth-dropdown {
 /* Lower all other elements */
 .hero-slider-wrapper { z-index: 1 !important; position: relative !important; }
 .product-sidebar, .filters-sidebar { z-index: 5000 !important; }
+
+/* ===== FIX STACKING CONTEXT FOR DROPDOWN ===== */
+.navbar-wrapper, .sticky-wrapper, .sticky-active {
+  z-index: 9999999 !important;
+  transform: none !important; /* Avoid creating new stacking context */
+  perspective: none !important;
+  filter: none !important;
+  overflow: visible !important;
+}
+
+/* ===== FIX SLIDER IMAGE TO SHOW FULL SHOE ===== */
+@media (max-width: 767px) {
+  .hero-slide-content {
+    height: 350px !important; /* Slightly reduced to keep it balanced */
+    align-items: center !important;
+  }
+  .hero-image {
+    width: 45% !important;
+    height: 80% !important; /* Don't stretch full height */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .hero-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* SHOW FULL IMAGE */
+    border-radius: 12px !important;
+  }
+}
