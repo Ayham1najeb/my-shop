@@ -292,13 +292,14 @@
 @media (max-width: 992px) {
     .legendary-banner {
         overflow: hidden !important;
-        /* Extra safety for mobile */
-        padding: 60px 20px;
+        padding: 40px 15px;
+        min-height: 400px;
+        margin: 20px 0;
     }
 
     .banner-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
 
@@ -308,19 +309,68 @@
     }
 
     .banner-visual-gallery {
-        height: 400px;
+        height: 250px;
     }
 
     .image-card {
-        width: 230px;
-        height: 320px;
+        width: 140px;
+        height: 200px;
+        border-width: 4px;
+    }
+
+    .card-1 {
+        transform: rotate(-8deg) translateX(-40px);
+    }
+
+    .card-2 {
+        transform: rotate(6deg) translateX(40px) translateY(15px);
     }
 
     .banner-main-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
     }
 
     .discount-value {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
+    }
+
+    .discount-label {
+        font-size: 0.9rem;
+    }
+
+    .banner-badge-bubble {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .banner-sub-text {
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+        line-height: 1.4;
+    }
+
+    .banner-action-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 8px;
     }
 }
+
+@media (max-width: 480px) {
+    .banner-main-title {
+        font-size: 1.5rem;
+    }
+
+    .image-card {
+        width: 120px;
+        height: 170px;
+    }
+
+    .banner-visual-gallery {
+        height: 200px;
+    }
+}
+
+```
