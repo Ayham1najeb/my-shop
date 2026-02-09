@@ -7,14 +7,14 @@
 /* ===== CATEGORIES PAGE - FORCE SMALL CARDS ===== */
 @media (max-width: 767px) {
 
-    /* Force category cards to be small */
+    /* Force category cards to be VERY small */
     .category-card,
     .category-card.holo-interactive,
     .holo-interactive.category-card,
     .categories-grid .category-card {
-        height: 100px !important;
-        max-height: 100px !important;
-        min-height: 100px !important;
+        height: 90px !important;
+        max-height: 90px !important;
+        min-height: 90px !important;
         border-radius: 10px !important;
     }
 
@@ -23,21 +23,21 @@
     .categories-container .categories-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        padding: 0 10px !important;
+        gap: 8px !important;
+        padding: 0 8px !important;
     }
 
     /* Force text size */
     .cat-name,
     .category-card .cat-name,
     .category-card.holo-interactive .cat-name {
-        font-size: 0.7rem !important;
+        font-size: 0.65rem !important;
         line-height: 1.2 !important;
     }
 
     /* Force overlay */
     .cat-overlay {
-        padding: 6px !important;
+        padding: 5px !important;
     }
 }
 
@@ -118,18 +118,28 @@
         margin-bottom: 10px !important;
     }
 
-    /* Force card text */
-    .about-card h3 {
-        font-size: 0.9rem !important;
-        margin-bottom: 6px !important;
+    /* Force card text - MUST BE VISIBLE */
+    .about-card h3,
+    .about-cards .about-card h3 {
+        font-size: 0.95rem !important;
+        margin-bottom: 8px !important;
+        color: #0f172a !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
-    .about-card p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
+    .about-card p,
+    .about-cards .about-card p {
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
         white-space: normal !important;
+        color: #64748b !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     /* Force hero section */
