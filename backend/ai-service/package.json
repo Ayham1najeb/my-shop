@@ -1,0 +1,12 @@
+{
+  "name": "ai-content-guard",
+  "version": "1.0.0",
+  "description": "AI Service for detecting NSFW content",
+  "main": "check_image.js",
+  "dependencies": {
+    "nsfwjs": "^2.4.2",
+    "@tensorflow/tfjs-node": "^4.10.0",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  }
+}
