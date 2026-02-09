@@ -220,54 +220,119 @@
     max-width: 300px;
   }
 }
-/* ===== MOBILE OVERRIDES FOR ABOUT PAGE ===== */
-@media (max-width: 767px) {
-  .about-hero { padding: 50px 15px 60px !important; }
-  .about-hero h1 { font-size: 1.4rem !important; margin-bottom: 10px !important; }
-  .about-hero p { font-size: 0.8rem !important; line-height: 1.5 !important; }
-  .about-stats { margin-top: -30px !important; margin-bottom: 50px !important; gap: 12px !important; }
-  .stat-item { padding: 18px !important; min-width: auto !important; border-radius: 12px !important; }
-  .stat-icon { font-size: 1.4rem !important; margin-bottom: 10px !important; }
-  .stat-item h3 { font-size: 1.2rem !important; margin-bottom: 5px !important; }
-  .stat-item p { font-size: 0.7rem !important; }
-  .about-cards { grid-template-columns: 1fr !important; gap: 12px !important; margin-bottom: 30px !important; }
-  .about-card { padding: 18px !important; border-radius: 12px !important; }
-  .card-icon-wrapper { width: 45px !important; height: 45px !important; font-size: 1.1rem !important; margin-bottom: 12px !important; }
-  .about-card h3 { font-size: 0.9rem !important; margin-bottom: 6px !important; }
-  .about-card p { font-size: 0.7rem !important; line-height: 1.4 !important; }
-  .about-cta-section { padding: 25px 15px !important; border-radius: 15px !important; }
-  .about-cta-section h2 { font-size: 1.1rem !important; margin-bottom: 12px !important; }
-  .cta-btn { padding: 10px 18px !important; font-size: 0.8rem !important; }
-}
 
-/* ===== FIX ABOUT PAGE TEXT OVERLAP ===== */
+/* ===== MOBILE LAYOUT - SINGLE CLEAN RULESET ===== */
 @media (max-width: 767px) {
-  .about-page { overflow-x: hidden !important; }
-  .about-hero { padding: 40px 15px 50px !important; margin-bottom: 20px !important; }
-  .about-hero::after { display: none !important; }
-  .about-stats { flex-direction: column !important; margin-top: 0 !important; margin-bottom: 30px !important; position: relative !important; z-index: 1 !important; }
-  .stat-item { width: 100% !important; min-width: auto !important; }
-  .about-cards { margin-top: 20px !important; }
-  .about-cta-section { margin-top: 30px !important; }
-}
 
-/* ===== FINAL FIX FOR ABOUT PAGE - STRONGEST OVERRIDE ===== */
-@media (max-width: 767px) {
-  .about-page .container { padding: 0 15px !important; overflow: visible !important; }
-  .about-hero { padding: 30px 15px !important; margin-bottom: 15px !important; min-height: auto !important; }
-  .about-hero::after { display: none !important; height: 0 !important; }
-  .about-hero h1 { font-size: 1.3rem !important; line-height: 1.3 !important; }
-  .about-hero p { font-size: 0.75rem !important; }
-  .about-stats { display: flex !important; flex-direction: column !important; gap: 10px !important; margin-top: 20px !important; margin-bottom: 20px !important; position: static !important; z-index: auto !important; }
-  .stat-item { margin: 0 !important; padding: 15px !important; }
-  .stat-icon { font-size: 1.3rem !important; }
-  .stat-item h3 { font-size: 1.1rem !important; }
-  .stat-item p { font-size: 0.65rem !important; }
-  .about-cards { margin-top: 15px !important; gap: 10px !important; }
-  .about-card { padding: 15px !important; }
-  .about-card h3 { font-size: 0.85rem !important; }
-  .about-card p { font-size: 0.65rem !important; }
-  .about-cta-section { padding: 20px 12px !important; margin-top: 15px !important; }
-  .about-cta-section h2 { font-size: 1rem !important; }
-  .cta-btn { font-size: 0.75rem !important; padding: 8px 15px !important; margin: 5px auto !important; }
+  /* Page container */
+  .about-page {
+    overflow-x: hidden !important;
+    padding-bottom: 40px !important;
+  }
+
+  .about-page .container {
+    padding: 0 15px !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero section */
+  .about-hero {
+    padding: 40px 15px 50px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .about-hero::after {
+    display: none !important;
+  }
+
+  .about-hero h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .about-hero p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Stats section */
+  .about-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .stat-item {
+    width: 100% !important;
+    min-width: auto !important;
+    padding: 20px !important;
+    border-radius: 15px !important;
+  }
+
+  .stat-icon {
+    font-size: 1.8rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .stat-item h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .stat-item p {
+    font-size: 0.85rem !important;
+  }
+
+  /* Cards section */
+  .about-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .about-card {
+    padding: 20px !important;
+    border-radius: 15px !important;
+  }
+
+  .card-icon-wrapper {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .about-card h3 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .about-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* CTA section */
+  .about-cta-section {
+    padding: 25px 15px !important;
+    border-radius: 18px !important;
+    margin-top: 20px !important;
+  }
+
+  .about-cta-section h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .cta-btn {
+    font-size: 0.85rem !important;
+    padding: 10px 20px !important;
+    margin: 8px auto !important;
+    display: block !important;
+    max-width: 280px !important;
+  }
 }
