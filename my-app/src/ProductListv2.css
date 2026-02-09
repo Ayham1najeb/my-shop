@@ -27,11 +27,11 @@
 }
 
 .section-title {
-    font-size: 1.2rem;
-    /* Mobile Base - Reduced */
+    font-size: 1.8rem;
+    /* Mobile Base */
     font-weight: 900;
     margin: 0;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
     background: linear-gradient(135deg, #0f172a 0%, #3BA3D9 50%, #006090 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 10px;
     text-shadow: 0 10px 20px rgba(59, 163, 217, 0.1);
 }
 
@@ -52,8 +52,8 @@
 }
 
 .title-icon {
-    font-size: 1.1rem;
-    /* Mobile Base - Reduced */
+    font-size: 1.6rem;
+    /* Mobile Base */
     filter: drop-shadow(0 5px 15px rgba(59, 163, 217, 0.4));
 }
 
@@ -246,17 +246,17 @@
 .overlay-box {
     width: auto;
     /* Expanded for text */
-    height: 30px;
-    /* Mobile Base - Reduced */
-    padding: 0 12px;
-    /* Mobile Base - Reduced */
+    height: 55px;
+    /* Increased size */
+    padding: 0 30px;
+    /* Increased padding */
     background: white;
-    border-radius: 8px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    gap: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(20px) scale(0.9);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: #333;
@@ -275,14 +275,13 @@
 }
 
 .overlay-icon {
-    font-size: 0.75rem;
-    /* Mobile Base - Reduced */
+    font-size: 1.25rem;
 }
 
 .overlay-text-small {
     display: block;
-    font-size: 0.6rem;
-    /* Mobile Base - Reduced */
+    font-size: 1.05rem;
+    /* Increased from 0.9rem */
     font-weight: 700;
     font-family: 'Cairo', sans-serif;
     white-space: nowrap;
