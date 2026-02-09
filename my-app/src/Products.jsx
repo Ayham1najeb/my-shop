@@ -665,48 +665,69 @@ const Products = () => {
              @media (max-width: 991px) {
                 .products-grid {
                    grid-template-columns: repeat(2, 1fr) !important;
-                   gap: 10px !important; 
+                   gap: 8px !important; 
                 }
                 
                 .product-card {
                     border-radius: 12px !important; 
                  }
+                 
+                /* Product card image container */
+                .product-card a > div {
+                    height: 120px !important;
+                    padding: 8px !important;
+                }
+                
+                /* Product title */
                 .product-card h3 {
-                   font-size: 0.8rem !important; 
-                   height: 32px !important;
+                   font-size: 0.75rem !important; 
+                   height: 30px !important;
                    margin-bottom: 6px !important;
                    line-height: 1.2 !important;
                 }
+                
+                /* Brand tag */
+                .product-card span {
+                    font-size: 0.65rem !important;
+                }
+                
+                /* Price */
+                .product-card div span {
+                    font-size: 1rem !important;
+                }
+                
+                /* Buttons */
                 .action-btn-primary {
-                   font-size: 0.75rem !important;
-                   padding: 6px !important;
+                   font-size: 0.7rem !important;
+                   padding: 6px 8px !important;
                    border-radius: 6px !important;
                    gap: 3px !important;
                 }
                 .action-btn-secondary {
-                   flex: 0 0 32px !important;
+                   flex: 0 0 30px !important;
                    padding: 6px !important;
                    border-radius: 6px !important;
                 }
                 .badge-discount {
-                   font-size: 9px !important;
+                   font-size: 8px !important;
                    padding: 3px 6px !important;
-                   top: 8px !important;
-                   left: 8px !important;
+                   top: 6px !important;
+                   left: 6px !important;
                 }
-                /* Scaled product images */
-                .product-card a > div {
-                    height: 130px !important;
-                    padding: 8px !important;
-                }
-                .price-final {
-                    font-size: 0.95rem !important; 
-                }
+                
+                /* Header section */
                 .premium-title {
-                    font-size: 1.25rem !important;
+                    font-size: 1.2rem !important;
                 }
                 .premium-subtitle {
-                    font-size: 0.85rem !important;
+                    font-size: 0.8rem !important;
+                }
+                .header-icon-wrapper {
+                    width: 45px !important;
+                    height: 45px !important;
+                }
+                .header-icon {
+                    font-size: 1.4rem !important;
                 }
              }
 
