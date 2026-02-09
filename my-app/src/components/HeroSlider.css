@@ -222,3 +222,11 @@
   .hero-slider-wrapper .slick-slide { display: inline-block !important; float: none !important; flex-shrink: 0 !important; }
   .hero-slide-content { display: flex !important; flex-direction: row !important; height: 150px !important; min-height: 150px !important; max-height: 150px !important; }
 }
+
+/* ===== INCREASE SLIDER HEIGHT ===== */
+@media (max-width: 767px) {
+  .hero-slide-content { height: 200px !important; min-height: 200px !important; max-height: 200px !important; }
+  .hero-text h1 { font-size: 1.1rem !important; }
+  .hero-text p { font-size: 0.7rem !important; -webkit-line-clamp: 3; }
+  .hero-btn { padding: 7px 14px !important; font-size: 0.7rem !important; }
+}
