@@ -944,3 +944,17 @@ html[dir="rtl"] .auth-dropdown {
   .hero-image { width: 50% !important; height: 100% !important; }
   .hero-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 0 12px 12px 0 !important; }
 }
+
+/* ===== SUPER HIGH Z-INDEX FOR DROPDOWN ABOVE EVERYTHING ===== */
+.auth-menu-container { z-index: 15000 !important; position: relative !important; }
+.dropdown-menu { z-index: 15001 !important; position: absolute !important; }
+.user-menu-container { z-index: 15000 !important; position: relative !important; }
+.auth-trigger { z-index: 15000 !important; position: relative !important; }
+
+@media (max-width: 900px) {
+  .auth-menu-container { z-index: 15000 !important; }
+  .dropdown-menu { z-index: 15001 !important; }
+  .user-menu-container { z-index: 15000 !important; }
+  .bottom-nav { z-index: 9999 !important; }
+  .nav-backdrop { z-index: 9998 !important; }
+}

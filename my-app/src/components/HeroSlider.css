@@ -239,3 +239,15 @@
   .hero-btn { padding: 8px 16px !important; font-size: 0.75rem !important; }
   .hero-image { width: 45% !important; }
 }
+
+/* ===== INCREASE SLIDER TO 360PX WITH FULL IMAGE ===== */
+@media (max-width: 767px) {
+  .hero-slider-wrapper { margin: 15px auto 25px !important; }
+  .hero-slide-content { height: 360px !important; min-height: 360px !important; max-height: 360px !important; border-radius: 16px !important; }
+  .hero-text { padding: 20px !important; }
+  .hero-text h1 { font-size: 1.4rem !important; margin-bottom: 10px !important; line-height: 1.3 !important; }
+  .hero-text p { font-size: 0.9rem !important; line-height: 1.6 !important; margin-bottom: 12px !important; }
+  .hero-btn { padding: 12px 24px !important; font-size: 0.9rem !important; border-radius: 8px !important; }
+  .hero-badge { font-size: 0.7rem !important; padding: 4px 10px !important; }
+  .hero-image { width: 52% !important; }
+}
