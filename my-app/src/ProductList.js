@@ -4,6 +4,7 @@ import { ProductContext } from "./ProductContext";
 import { FaEye, FaShoppingBag, FaHeart, FaRegHeart, FaPlus } from "react-icons/fa"; // Import Icons
 import SkeletonProductCard from "./components/SkeletonProductCard";
 import "./ProductListv2.css";
+import "./ProductListMobile.css";
 
 const HomeProductList = () => {
   const navigate = useNavigate();
