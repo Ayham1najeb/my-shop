@@ -926,3 +926,21 @@ html[dir="rtl"] .auth-dropdown {
   .hero-badge { font-size: 0.65rem !important; padding: 3px 8px !important; }
   .hero-image { width: 48% !important; }
 }
+
+/* ===== FIX DROPDOWN TO APPEAR ABOVE MOBILE MENU ===== */
+@media (max-width: 900px) {
+  .auth-menu-container { z-index: 10500 !important; }
+  .dropdown-menu { z-index: 10501 !important; }
+  .user-menu-container { z-index: 10500 !important; }
+}
+
+/* ===== INCREASE SLIDER HEIGHT TO SHOW FULL IMAGE ===== */
+@media (max-width: 767px) {
+  .hero-slide-content { height: 320px !important; min-height: 320px !important; max-height: 320px !important; }
+  .hero-text { flex: 1 !important; padding: 18px !important; }
+  .hero-text h1 { font-size: 1.35rem !important; margin-bottom: 8px !important; }
+  .hero-text p { font-size: 0.85rem !important; line-height: 1.5 !important; }
+  .hero-btn { padding: 10px 20px !important; font-size: 0.85rem !important; }
+  .hero-image { width: 50% !important; height: 100% !important; }
+  .hero-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 0 12px 12px 0 !important; }
+}
