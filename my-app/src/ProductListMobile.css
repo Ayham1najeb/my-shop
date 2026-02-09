@@ -17,6 +17,12 @@
         gap: 2px !important;
         font-weight: 600 !important;
         max-width: 85% !important;
+        line-height: 1 !important;
+    }
+
+    .btn-add-cart span {
+        font-size: 0.5rem !important;
+        line-height: 1 !important;
     }
 
     .cart-icon {
