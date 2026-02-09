@@ -51,7 +51,7 @@ const HeroSlider = () => {
     ];
 
     const settings = {
-        dots: true,
+        dots: false, // Disabled to prevent duplicates - using custom CSS dots
         infinite: true,
         speed: 800,
         slidesToShow: 1,
@@ -61,6 +61,14 @@ const HeroSlider = () => {
         rtl: isRTL,
         arrows: false, // We'll user custom arrows if needed, or stick to dots for cleaner look
         pauseOnHover: true,
+        customPaging: function (i) {
+            return <button className="custom-dot"></button>;
+        },
+        appendDots: dots => (
+            <div>
+                <ul className="custom-dots-list"> {dots} </ul>
+            </div>
+        ),
     };
 
     return (

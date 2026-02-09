@@ -640,3 +640,48 @@
     height: 12px !important;
   }
 }
+
+/* ===== FINAL SINGLE DOTS SOLUTION ===== */
+@media (max-width: 767px) {
+  /* Target ONLY the custom-slider-dots class */
+  .hero-slider-wrapper .custom-slider-dots {
+    display: flex !important;
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    z-index: 10 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .hero-slider-wrapper .custom-slider-dots li {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 !important;
+  }
+  
+  .hero-slider-wrapper .custom-slider-dots li button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.6) !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+  }
+  
+  .hero-slider-wrapper .custom-slider-dots li button:before {
+    display: none !important;
+  }
+  
+  .hero-slider-wrapper .custom-slider-dots li.slick-active button {
+    background: #3BA3D9 !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
