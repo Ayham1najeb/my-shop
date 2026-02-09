@@ -1041,3 +1041,37 @@ html[dir="rtl"] .auth-dropdown {
     width: 200px !important;
   }
 }
+
+/* ===== FIX SLIDER: REDUCE HEIGHT, KEEP FULL IMAGE ===== */
+@media (max-width: 767px) {
+  .hero-slide-content {
+    height: 250px !important; /* Reduced from 350px/400px to be more compact */
+    padding: 10px !important;
+  }
+  .hero-image {
+    width: 50% !important;
+    height: 90% !important; /* Use most of the height */
+  }
+  .hero-text {
+    padding: 10px !important;
+  }
+  .hero-text h1 {
+    font-size: 1.1rem !important;
+    margin-bottom: 5px !important;
+  }
+  
+  /* Ensure NO cropping - contain image fully */
+  .hero-image img {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 8px !important;
+  }
+}
+
+/* ===== ENSUREDROPDOWN FLOATS PERFECTLY ===== */
+.auth-dropdown {
+  top: calc(100% + 15px) !important; /* Push it down slightly */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25) !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+}
