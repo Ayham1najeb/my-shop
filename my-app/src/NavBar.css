@@ -1161,3 +1161,57 @@ html[dir="rtl"] .auth-dropdown {
     z-index: 1 !important;
   }
 }
+
+/* ========================================
+   FINAL NUCLEAR OPTION - DROPDOWN FIX
+   This MUST be the LAST rule in the file
+   ======================================== */
+
+/* Mobile only - override ALL previous rules */
+@media (max-width: 900px) {
+  /* Force dropdown above EVERYTHING with maximum specificity */
+  .navbar-wrapper .auth-menu-container .auth-dropdown,
+  .sticky-wrapper .auth-menu-container .auth-dropdown,
+  .header-actions .auth-menu-container .auth-dropdown {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 200px !important;
+    z-index: 2147483647 !important;
+    background: white !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+    border: 2px solid #3BA3D9 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  /* Parent must have high z-index too */
+  .navbar-wrapper .auth-menu-container,
+  .sticky-wrapper .auth-menu-container,
+  .header-actions .auth-menu-container {
+    position: relative !important;
+    z-index: 2147483646 !important;
+    overflow: visible !important;
+  }
+  
+  /* RTL support */
+  html[dir="rtl"] .navbar-wrapper .auth-menu-container .auth-dropdown,
+  html[dir="rtl"] .sticky-wrapper .auth-menu-container .auth-dropdown,
+  html[dir="rtl"] .header-actions .auth-menu-container .auth-dropdown {
+    right: auto !important;
+    left: 0 !important;
+  }
+}
+
+/* Force slider to stay below on ALL screen sizes */
+.hero-slider-wrapper,
+.hero-slider-wrapper *,
+.hero-slide,
+.hero-slide-content,
+.hero-text,
+.hero-image {
+  z-index: 1 !important;
+  position: relative !important;
+}
