@@ -958,3 +958,24 @@ html[dir="rtl"] .auth-dropdown {
   .bottom-nav { z-index: 9999 !important; }
   .nav-backdrop { z-index: 9998 !important; }
 }
+
+/* ===== FINAL ATTEMPT: NUCLEAR Z-INDEX FIX ===== */
+.auth-menu-container { z-index: 9999999 !important; position: relative !important; }
+.dropdown-menu, .auth-dropdown { z-index: 9999999 !important; position: absolute !important; }
+.user-menu-container { z-index: 9999999 !important; position: relative !important; }
+.auth-trigger { z-index: 9999999 !important; position: relative !important; }
+.navbar-wrapper { z-index: 9999990 !important; }
+
+@media (max-width: 900px) {
+  /* Sidebar lower than dropdown */
+  .bottom-nav { z-index: 8000 !important; }
+  .nav-backdrop { z-index: 7999 !important; }
+  
+  /* Ensure Dropdown is ABSOLUTELY ON TOP */
+  .auth-menu-container { z-index: 9999999 !important; }
+  .auth-dropdown { z-index: 9999999 !important; }
+}
+
+/* Lower all other elements */
+.hero-slider-wrapper { z-index: 1 !important; position: relative !important; }
+.product-sidebar, .filters-sidebar { z-index: 5000 !important; }

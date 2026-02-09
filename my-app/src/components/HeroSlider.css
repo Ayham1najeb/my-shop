@@ -251,3 +251,14 @@
   .hero-badge { font-size: 0.7rem !important; padding: 4px 10px !important; }
   .hero-image { width: 52% !important; }
 }
+
+/* ===== MAX SIZE SLIDER ===== */
+@media (max-width: 767px) {
+  .hero-slider-wrapper { margin: 15px auto 30px !important; }
+  .hero-slide-content { height: 400px !important; min-height: 400px !important; max-height: 400px !important; }
+  .hero-image { width: 55% !important; }
+  .hero-text { padding: 25px !important; }
+  .hero-text h1 { font-size: 1.45rem !important; margin-bottom: 12px !important; }
+  .hero-text p { font-size: 0.95rem !important; line-height: 1.6 !important; margin-bottom: 15px !important; }
+  .hero-btn { padding: 12px 25px !important; font-size: 0.95rem !important; }
+}
