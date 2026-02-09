@@ -906,3 +906,23 @@ html[dir="rtl"] .auth-dropdown {
 
 /* Lower z-index for page sections */
 .about-hero, .contact-hero, .hero-section, .page-hero { z-index: 1 !important; position: relative !important; }
+
+/* ===== FIX AUTH BUTTON Z-INDEX ===== */
+@media (max-width: 900px) {
+  .auth-trigger, .auth-btn, .header-actions .action-item { z-index: 100 !important; }
+  .bottom-nav { z-index: 9999 !important; }
+  .nav-backdrop { z-index: 9998 !important; }
+}
+
+/* ===== INCREASE SLIDER HEIGHT AND WIDTH ===== */
+@media (max-width: 767px) {
+  .hero-slider-wrapper { padding: 0 5px !important; margin: 15px auto 20px !important; }
+  .hero-slide { padding: 0 3px !important; }
+  .hero-slide-content { height: 280px !important; min-height: 280px !important; max-height: 280px !important; border-radius: 15px !important; }
+  .hero-text { padding: 15px !important; }
+  .hero-text h1 { font-size: 1.3rem !important; margin-bottom: 6px !important; }
+  .hero-text p { font-size: 0.8rem !important; line-height: 1.4 !important; }
+  .hero-btn { padding: 9px 18px !important; font-size: 0.8rem !important; }
+  .hero-badge { font-size: 0.65rem !important; padding: 3px 8px !important; }
+  .hero-image { width: 48% !important; }
+}
