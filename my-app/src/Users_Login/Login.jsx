@@ -23,7 +23,8 @@ const Login = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Accept": "application/json",
+          "ngrok-skip-browser-warning": "1"
         },
         body: JSON.stringify({ email, password })
       });
@@ -54,7 +55,8 @@ const Login = () => {
             headers: {
               "Authorization": `Bearer ${data.data.token} `,
               "Content-Type": "application/json",
-              "Accept": "application/json"
+              "Accept": "application/json",
+              "ngrok-skip-browser-warning": "1"
             },
             body: JSON.stringify({
               product_ids: localWishlist.map(p => p.id)

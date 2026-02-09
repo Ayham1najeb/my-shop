@@ -1,4 +1,3 @@
-// React Application Entry Point - Triggering Fresh Build
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './LanguageContext';

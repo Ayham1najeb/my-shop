@@ -53,7 +53,11 @@ const Profile = () => {
             try {
                 // Fetch Profile
                 const profileRes = await fetch(`${API_URL}/api/profile`, {
-                    headers: { "Authorization": `Bearer ${token}`, "Accept": "application/json" }
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Accept": "application/json",
+                        "ngrok-skip-browser-warning": "1"
+                    }
                 });
 
                 if (profileRes.ok) {
@@ -65,8 +69,12 @@ const Profile = () => {
                 }
 
                 // Fetch Orders
-                const ordersRes = await fetch(`${API_URL} /api/orders`, {
-                    headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" }
+                const ordersRes = await fetch(`${API_URL}/api/orders`, {
+                    headers: {
+                        "Authorization": `Bearer ${token} `,
+                        "Accept": "application/json",
+                        "ngrok-skip-browser-warning": "1"
+                    }
                 });
 
                 if (ordersRes.ok) {
@@ -107,9 +115,13 @@ const Profile = () => {
                 formDataToSend.append('name', user?.name || formData.displayName);
                 formDataToSend.append('phone', user?.phone || formData.phone);
 
-                const response = await fetch(`${API_URL} /api/profile / update`, {
+                const response = await fetch(`${API_URL}/api/profile/update`, {
                     method: "POST",
-                    headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" },
+                    headers: {
+                        "Authorization": `Bearer ${token} `,
+                        "Accept": "application/json",
+                        "ngrok-skip-browser-warning": "1"
+                    },
                     body: formDataToSend
                 });
 
@@ -140,9 +152,13 @@ const Profile = () => {
             formDataToSend.append('phone', formData.phone);
             if (formData.image) formDataToSend.append('image', formData.image);
 
-            const response = await fetch("http://127.0.0.1:8000/api/profile/update", {
+            const response = await fetch(`${API_URL}/api/profile/update`, {
                 method: "POST",
-                headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" },
+                headers: {
+                    "Authorization": `Bearer ${token} `,
+                    "Accept": "application/json",
+                    "ngrok-skip-browser-warning": "1"
+                },
                 body: formDataToSend
             });
 
@@ -165,12 +181,13 @@ const Profile = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('auth_token');
-            const response = await fetch("http://127.0.0.1:8000/api/profile/password", {
+            const response = await fetch(`${API_URL}/api/profile/password`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token} `,
                     "Content-Type": "application/json",
-                    "Accept": "application/json"
+                    "Accept": "application/json",
+                    "ngrok-skip-browser-warning": "1"
                 },
                 body: JSON.stringify(passData)
             });
