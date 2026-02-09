@@ -43,17 +43,17 @@ const ProductReviews = ({ productId }) => {
                 console.error("API returned non-array:", data);
                 setReviews([]);
             }
-            setLoading(false);
+            // setLoading(false);
         } catch (error) {
             console.error("Error loading reviews", error);
-            setLoading(false);
+            // setLoading(false);
         }
     }, [productId]);
 
     useEffect(() => {
         if (productId) {
             setReviews([]);
-            setLoading(true);
+            // setLoading(true);
             fetchReviews();
         }
     }, [productId, fetchReviews]);
