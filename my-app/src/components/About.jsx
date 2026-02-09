@@ -1,6 +1,7 @@
 // src/components/About.jsx
 import React, { useState, useEffect } from "react";
 import "./About.css";
+import "../MobileFixes.css"; // Mobile fixes - must be last
 import { FaCheckCircle, FaRocket, FaHeart, FaUsers, FaBoxOpen, FaGlobe } from "react-icons/fa";
 
 const About = () => {

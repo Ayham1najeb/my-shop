@@ -1,0 +1,147 @@
+/* ========================================
+   MOBILE FIXES - FINAL VERSION
+   This file contains all mobile fixes
+   Import this LAST to override everything
+   ======================================== */
+
+/* ===== CATEGORIES PAGE - FORCE SMALL CARDS ===== */
+@media (max-width: 767px) {
+
+    /* Force category cards to be small */
+    .category-card,
+    .category-card.holo-interactive,
+    .holo-interactive.category-card,
+    .categories-grid .category-card {
+        height: 100px !important;
+        max-height: 100px !important;
+        min-height: 100px !important;
+        border-radius: 10px !important;
+    }
+
+    /* Force grid layout */
+    .categories-grid,
+    .categories-container .categories-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Force text size */
+    .cat-name,
+    .category-card .cat-name,
+    .category-card.holo-interactive .cat-name {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Force overlay */
+    .cat-overlay {
+        padding: 6px !important;
+    }
+}
+
+/* ===== ABOUT PAGE - FIX TEXT OVERFLOW ===== */
+@media (max-width: 767px) {
+
+    /* Force page container */
+    .about-page,
+    .about-page *,
+    .about-container,
+    .about-page .container {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force stats section */
+    .about-stats,
+    .about-page .about-stats {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Force stat items */
+    .stat-item,
+    .about-stats .stat-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force stat icons */
+    .stat-icon,
+    .stat-item .stat-icon {
+        font-size: 1.5rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Force stat text */
+    .stat-item h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .stat-item p {
+        font-size: 0.75rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Force cards section */
+    .about-cards,
+    .about-page .about-cards {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* Force about cards */
+    .about-card,
+    .about-cards .about-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force card icons */
+    .card-icon-wrapper,
+    .about-card .card-icon-wrapper {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Force card text */
+    .about-card h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .about-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+    }
+
+    /* Force hero section */
+    .about-hero {
+        padding: 30px 15px !important;
+    }
+
+    .about-hero h1 {
+        font-size: 1.3rem !important;
+    }
+
+    .about-hero p {
+        font-size: 0.8rem !important;
+    }
+}

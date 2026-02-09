@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaMale, FaFemale, FaChild, FaRunning, FaRing, FaLaptop, FaCompass, FaPlus, FaGem, FaTshirt } from "react-icons/fa";
 import "./Categories.css";
+import "../MobileFixes.css"; // Mobile fixes - must be last
 
 const Categories = ({ isHomePage = false }) => {
   const categories = [
