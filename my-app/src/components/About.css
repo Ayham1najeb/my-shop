@@ -239,3 +239,14 @@
   .about-cta-section h2 { font-size: 1.1rem !important; margin-bottom: 12px !important; }
   .cta-btn { padding: 10px 18px !important; font-size: 0.8rem !important; }
 }
+
+/* ===== FIX ABOUT PAGE TEXT OVERLAP ===== */
+@media (max-width: 767px) {
+  .about-page { overflow-x: hidden !important; }
+  .about-hero { padding: 40px 15px 50px !important; margin-bottom: 20px !important; }
+  .about-hero::after { display: none !important; }
+  .about-stats { flex-direction: column !important; margin-top: 0 !important; margin-bottom: 30px !important; position: relative !important; z-index: 1 !important; }
+  .stat-item { width: 100% !important; min-width: auto !important; }
+  .about-cards { margin-top: 20px !important; }
+  .about-cta-section { margin-top: 30px !important; }
+}

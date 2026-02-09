@@ -876,3 +876,15 @@ html[dir="rtl"] .auth-dropdown {
 .auth-dropdown-item+.auth-dropdown-item {
   margin-top: 8px;
 }
+/* ===== MOBILE MENU FIXES ===== */
+@media (max-width: 900px) {
+  /* Ensure menu drawer is above backdrop */
+  .bottom-nav { z-index: 5000 !important; }
+  .nav-backdrop { z-index: 4999 !important; pointer-events: none; }
+  .nav-backdrop.active { pointer-events: auto; }
+  
+  /* Ensure nav items are clickable */
+  .nav-menu { position: relative; z-index: 5001 !important; }
+  .nav-item { z-index: 5002 !important; pointer-events: auto !important; cursor: pointer !important; }
+  .nav-item a, .nav-item button { pointer-events: auto !important; cursor: pointer !important; }
+}

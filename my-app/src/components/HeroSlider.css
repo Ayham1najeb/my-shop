@@ -212,3 +212,13 @@
   .hero-image { width: 40% !important; height: 100% !important; flex-shrink: 0 !important; }
   .hero-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
 }
+
+/* ===== FIX SLIDER - FORCE HORIZONTAL CAROUSEL ===== */
+@media (max-width: 767px) {
+  .hero-slider-wrapper { overflow: hidden !important; }
+  .hero-slider-wrapper .slick-slider { display: flex !important; overflow: hidden !important; }
+  .hero-slider-wrapper .slick-list { overflow: hidden !important; }
+  .hero-slider-wrapper .slick-track { display: flex !important; flex-direction: row !important; }
+  .hero-slider-wrapper .slick-slide { display: inline-block !important; float: none !important; flex-shrink: 0 !important; }
+  .hero-slide-content { display: flex !important; flex-direction: row !important; height: 150px !important; min-height: 150px !important; max-height: 150px !important; }
+}
