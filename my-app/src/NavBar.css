@@ -28,7 +28,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 1000;
+  /* Reduced from 99999 to stay below mobile menu */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   animation: slideDown 0.3s ease-in-out;
 }
@@ -61,7 +62,8 @@
   font-size: 1rem;
   font-weight: 500;
   position: relative;
-  z-index: 1001;
+  z-index: 999;
+  /* Reduced from 1001 to stay below mobile menu */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
