@@ -665,69 +665,81 @@ const Products = () => {
              @media (max-width: 991px) {
                 .products-grid {
                    grid-template-columns: repeat(2, 1fr) !important;
-                   gap: 8px !important; 
+                   gap: 6px !important; 
                 }
                 
                 .product-card {
-                    border-radius: 12px !important; 
+                    border-radius: 10px !important;
+                    padding: 0 !important;
                  }
                  
                 /* Product card image container */
                 .product-card a > div {
-                    height: 120px !important;
-                    padding: 8px !important;
+                    height: 90px !important;
+                    padding: 6px !important;
                 }
                 
                 /* Product title */
                 .product-card h3 {
-                   font-size: 0.75rem !important; 
-                   height: 30px !important;
-                   margin-bottom: 6px !important;
-                   line-height: 1.2 !important;
+                   font-size: 0.65rem !important; 
+                   height: 26px !important;
+                   margin-bottom: 4px !important;
+                   line-height: 1.1 !important;
+                }
+                
+                /* Product card content padding */
+                .product-card > div:last-child {
+                    padding: 10px !important;
                 }
                 
                 /* Brand tag */
                 .product-card span {
-                    font-size: 0.65rem !important;
+                    font-size: 0.6rem !important;
                 }
                 
                 /* Price */
                 .product-card div span {
-                    font-size: 1rem !important;
+                    font-size: 0.9rem !important;
                 }
                 
                 /* Buttons */
                 .action-btn-primary {
-                   font-size: 0.7rem !important;
-                   padding: 6px 8px !important;
-                   border-radius: 6px !important;
-                   gap: 3px !important;
+                   font-size: 0.6rem !important;
+                   padding: 5px 6px !important;
+                   border-radius: 5px !important;
+                   gap: 2px !important;
                 }
                 .action-btn-secondary {
-                   flex: 0 0 30px !important;
-                   padding: 6px !important;
-                   border-radius: 6px !important;
+                   flex: 0 0 26px !important;
+                   padding: 5px !important;
+                   border-radius: 5px !important;
+                   font-size: 0.9rem !important;
                 }
                 .badge-discount {
-                   font-size: 8px !important;
-                   padding: 3px 6px !important;
-                   top: 6px !important;
-                   left: 6px !important;
+                   font-size: 7px !important;
+                   padding: 2px 5px !important;
+                   top: 5px !important;
+                   left: 5px !important;
+                }
+                
+                /* Rating stars */
+                .product-card .fa-star {
+                    font-size: 0.65rem !important;
                 }
                 
                 /* Header section */
                 .premium-title {
-                    font-size: 1.2rem !important;
+                    font-size: 1.1rem !important;
                 }
                 .premium-subtitle {
-                    font-size: 0.8rem !important;
+                    font-size: 0.75rem !important;
                 }
                 .header-icon-wrapper {
-                    width: 45px !important;
-                    height: 45px !important;
+                    width: 40px !important;
+                    height: 40px !important;
                 }
                 .header-icon {
-                    font-size: 1.4rem !important;
+                    font-size: 1.2rem !important;
                 }
              }
 
