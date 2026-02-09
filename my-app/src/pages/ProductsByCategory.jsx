@@ -54,7 +54,7 @@ const ProductsByCategory = () => {
 
     return products.map((product, index) => {
       const brandIndex = product.id % brandsList.length;
-      const colorIndex = (product.id * 2) % colorsList.length;
+      // const colorIndex = (product.id * 2) % colorsList.length;
       const rating = (product.id % 5) + 1;
 
       let catId = 'others';

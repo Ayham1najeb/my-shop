@@ -60,6 +60,7 @@ export const translations = {
         cart_title: "سلة التسوق",
         continue_shopping: "متابعة التسوق",
         subtotal: "المجموع الفرعي",
+        shipping: "الشحن",
         proceed_checkout: "متابعة للدفع",
 
         // Checkout Form

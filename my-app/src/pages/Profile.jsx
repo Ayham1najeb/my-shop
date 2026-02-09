@@ -1,8 +1,8 @@
-```javascript
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-    FaShoppingBag
+    FaUser, FaEnvelope, FaPhone, FaEdit, FaSave,
+    FaHeart, FaShoppingBag, FaSignOutAlt, FaCamera, FaKey, FaBoxOpen
 } from 'react-icons/fa';
 import { useLanguage } from '../LanguageContext';
 import { ProductContext } from '../ProductContext';
@@ -52,8 +52,8 @@ const Profile = () => {
 
             try {
                 // Fetch Profile
-                const profileRes = await fetch(`${ API_URL } /api/profile`, {
-                    headers: { "Authorization": `Bearer ${ token } `, "Accept": "application/json" }
+                const profileRes = await fetch(`${API_URL}/api/profile`, {
+                    headers: { "Authorization": `Bearer ${token}`, "Accept": "application/json" }
                 });
 
                 if (profileRes.ok) {
@@ -65,8 +65,8 @@ const Profile = () => {
                 }
 
                 // Fetch Orders
-                const ordersRes = await fetch(`${ API_URL } /api/orders`, {
-                    headers: { "Authorization": `Bearer ${ token } `, "Accept": "application/json" }
+                const ordersRes = await fetch(`${API_URL} /api/orders`, {
+                    headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" }
                 });
 
                 if (ordersRes.ok) {
@@ -107,9 +107,9 @@ const Profile = () => {
                 formDataToSend.append('name', user?.name || formData.displayName);
                 formDataToSend.append('phone', user?.phone || formData.phone);
 
-                const response = await fetch(`${ API_URL } /api/profile / update`, {
+                const response = await fetch(`${API_URL} /api/profile / update`, {
                     method: "POST",
-                    headers: { "Authorization": `Bearer ${ token } `, "Accept": "application/json" },
+                    headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" },
                     body: formDataToSend
                 });
 
@@ -142,7 +142,7 @@ const Profile = () => {
 
             const response = await fetch("http://127.0.0.1:8000/api/profile/update", {
                 method: "POST",
-                headers: { "Authorization": `Bearer ${ token } `, "Accept": "application/json" },
+                headers: { "Authorization": `Bearer ${token} `, "Accept": "application/json" },
                 body: formDataToSend
             });
 
@@ -168,7 +168,7 @@ const Profile = () => {
             const response = await fetch("http://127.0.0.1:8000/api/profile/password", {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${ token } `,
+                    "Authorization": `Bearer ${token} `,
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
@@ -256,7 +256,7 @@ const Profile = () => {
                                                 <span className="order-number">#{order.order_number}</span>
                                                 <span className="order-date">{new Date(order.created_at).toLocaleDateString()}</span>
                                             </div>
-                                            <span className={`order - status status - ${ order.status } `}>
+                                            <span className={`order - status status - ${order.status} `}>
                                                 {order.status}
                                             </span>
                                         </div>
@@ -388,25 +388,25 @@ const Profile = () => {
 
                     <nav className="dashboard-nav">
                         <button
-                            className={`nav - item ${ activeTab === 'overview' ? 'active' : '' } `}
+                            className={`nav - item ${activeTab === 'overview' ? 'active' : ''} `}
                             onClick={() => setActiveTab('overview')}
                         >
                             <FaBoxOpen /> {language === 'ar' ? 'نظرة عامة' : 'Overview'}
                         </button>
                         <button
-                            className={`nav - item ${ activeTab === 'orders' ? 'active' : '' } `}
+                            className={`nav - item ${activeTab === 'orders' ? 'active' : ''} `}
                             onClick={() => setActiveTab('orders')}
                         >
                             <FaShoppingBag /> {language === 'ar' ? 'طلباتي' : 'My Orders'}
                         </button>
                         <button
-                            className={`nav - item ${ activeTab === 'settings' ? 'active' : '' } `}
+                            className={`nav - item ${activeTab === 'settings' ? 'active' : ''} `}
                             onClick={() => setActiveTab('settings')}
                         >
                             <FaEdit /> {language === 'ar' ? 'تعديل البيانات' : 'Edit Profile'}
                         </button>
                         <button
-                            className={`nav - item ${ activeTab === 'security' ? 'active' : '' } `}
+                            className={`nav - item ${activeTab === 'security' ? 'active' : ''} `}
                             onClick={() => setActiveTab('security')}
                         >
                             <FaKey /> {language === 'ar' ? 'الأمان' : 'Security'}
@@ -423,7 +423,7 @@ const Profile = () => {
                 {/* Main Content */}
                 <main className="dashboard-content">
                     {message.text && (
-                        <div className={`notification - toast ${ message.type } `}>
+                        <div className={`notification - toast ${message.type} `}>
                             {message.text}
                         </div>
                     )}
