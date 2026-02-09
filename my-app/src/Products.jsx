@@ -665,40 +665,45 @@ const Products = () => {
             @media (max-width: 991px) {
                .products-grid {
                   grid-template-columns: repeat(2, 1fr) !important;
-                  gap: 20px !important; /* More breathing room */
+                  gap: 12px !important; 
                }
                
                .product-card {
-                   border-radius: 30px !important; /* Dramatic rounded corners */
-                   border-width: 2px !important;
+                   border-radius: 16px !important; 
                 }
                .product-card h3 {
-                  font-size: 1.1rem !important; /* Premium title size */
-                  height: 48px !important;
-                  margin-bottom: 10px !important;
-                  line-height: 1.4 !important;
+                  font-size: 0.9rem !important; 
+                  height: 36px !important;
+                  margin-bottom: 8px !important;
+                  line-height: 1.3 !important;
                }
                .action-btn-primary {
-                  font-size: 1.05rem !important;
-                  padding: 12px !important;
-                  border-radius: 12px !important;
+                  font-size: 0.85rem !important;
+                  padding: 8px !important;
+                  border-radius: 8px !important;
+                  gap: 4px !important;
                }
                .action-btn-secondary {
-                  flex: 0 0 50px !important;
-                  padding: 12px !important;
-                  border-radius: 12px !important;
+                  flex: 0 0 38px !important;
+                  padding: 8px !important;
+                  border-radius: 8px !important;
                }
                .badge-discount {
-                  font-size: 12px !important;
-                  padding: 5px 12px !important;
+                  font-size: 10px !important;
+                  padding: 4px 8px !important;
+                  top: 10px !important;
+                  left: 10px !important;
                }
-               /* Large, clear product images */
+               /* Scaled product images */
                .product-card a > div {
-                   height: 230px !important;
-                   padding: 20px !important;
+                   height: 160px !important;
+                   padding: 12px !important;
                }
                .price-final {
-                   font-size: 1.8rem !important; /* Bold, clear pricing */
+                   font-size: 1.1rem !important; 
+               }
+               .premium-title {
+                   font-size: 1.5rem !important;
                }
             }
 
