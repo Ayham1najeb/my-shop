@@ -1,0 +1,137 @@
+/* Reviews.css - مصغر وأنيق */
+
+.reviews {
+  padding: 50px 15px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.reviews .title {
+  font-size: 1.8rem;
+  margin-bottom: 35px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+}
+
+.reviews .title::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #001b6b;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* شبكة الكروت */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* كرت مراجعة */
+.review-card {
+  perspective: 800px;
+}
+
+.review-card-inner {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) saturate(180%);
+  border-radius: 12px;
+  padding: 15px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  max-width: 220px;
+  margin: auto;
+}
+
+.review-card-inner:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.review-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 2px solid rgba(14, 79, 2, 0.5);
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.review-card-inner:hover .review-img {
+  transform: scale(1.08) rotate(-3deg);
+  border-color: #00c6ff;
+}
+
+.review-card h4 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.review-card .comment {
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 10px;
+  min-height: 45px;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.review-card .rating {
+  color: #f1c40f;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* زر عرض المزيد احترافي */
+/* زر عرض المزيد صغير بشكل مربع/مدور */
+.see-more-card {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 90px; /* نزول بسيط لتحت */
+}
+
+.see-more-inner {
+  width: 60px;   /* العرض */
+  height: 60px;  /* الارتفاع */
+  border-radius: 50%; /* 50% = دائرة / لو بدك مربع خليها 8px مثلاً */
+  background: #030303;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.see-more-inner:hover {
+  background: #00256e;
+  transform: scale(1.05);
+}
+
+.see-more-inner span {
+  display: none; /* نخفي النص "عرض المزيد" إذا بدك الزر فقط أيقونة */
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  transition: transform 0.3s ease;
+}
+
+.see-more-inner:hover .arrow-icon {
+  transform: translateX(2px);
+}

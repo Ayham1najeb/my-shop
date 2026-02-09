@@ -1,0 +1,876 @@
+/* General Reset/Container */
+* {
+  box-sizing: border-box;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+}
+
+/* Ensure parent has no overflow hidden for sticky to work */
+.navbar-wrapper {
+  background: #fff;
+  position: relative;
+  z-index: 10000;
+}
+
+.sticky-wrapper {
+  position: relative;
+  /* Default to relative */
+  background: #fff;
+  z-index: 2100;
+}
+
+.sticky-active {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Language Selector in Header */
+/* 1. Scrolling Top Bar */
+.scrolling-bar {
+  background: #006090;
+  /* Solid Darker Blue */
+  color: #f8fafc;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1001;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+  .scrolling-bar {
+    padding: 6px 0;
+    font-size: 0.85rem;
+  }
+}
+
+.scrolling-content {
+  display: flex;
+  width: max-content;
+  /* Ensure container fits all text */
+  animation: scroll-text 8s linear infinite;
+}
+
+.scroll-item {
+  display: inline-block;
+  padding: 0 50px;
+  /* Consistent spacing */
+  flex-shrink: 0;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 2. Main Header */
+.main-header {
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Logo */
+.header-logo h2 {
+  margin: 0;
+  color: #2d2f31;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.header-logo {
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+/* Search Bar */
+.header-search {
+  flex: 1;
+  max-width: 600px;
+}
+
+.header-search form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 14px 18px 14px 50px;
+  /* space for icon on left (RTL support needed) */
+  border: 1px solid #2d2f31;
+  border-radius: 4px;
+  font-size: 1.05rem;
+  background-color: #f7f9fa;
+  transition: all 0.3s;
+}
+
+.header-search input:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #0284c7;
+}
+
+/* Adjust search icon position for RTL/LTR */
+.header-search .search-btn {
+  position: absolute;
+  left: 10px;
+  /* Needs to be right for RTL if direction is rtl */
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-right: 10px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #2d2f31;
+  cursor: pointer;
+}
+
+/* Cart Icon */
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #0284c7;
+  background: white;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s;
+}
+
+.cart-icon-wrapper:hover {
+  background: #f8fafc;
+}
+
+/* Cart Badge */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 11px;
+  font-weight: 800;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Auth Actions */
+.auth-links-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-text {
+  text-decoration: none;
+  color: #2d2f31;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-text:hover {
+  color: #0284c7;
+}
+
+.register-btn {
+  text-decoration: none;
+  background-color: #0ea5e9;
+  /* Light blue button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  /* Rounded pill shape */
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #0284c7;
+}
+
+/* User Menu */
+.user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-icon {
+  font-size: 1.8rem;
+  color: #888;
+}
+
+.user-menu-container {
+  position: relative;
+}
+
+/* Premium Glassmorphism Dropdown Animation */
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 10px 20px rgba(0, 0, 0, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.04);
+  padding: 8px;
+  min-width: 260px;
+  /* Enlarged list as requested */
+  z-index: 1001;
+  animation: slideInMenu 0.25s ease-out forwards;
+  transform-origin: top right;
+}
+
+/* Icon Buttons Container (Wishlist, Cart) */
+.icon-btn-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  /* Square with rounded corners */
+  border: 1.5px solid #e2e8f0;
+  color: #64748b;
+  font-size: 1.3rem;
+  transition: all 0.25s ease;
+  background: white;
+}
+
+.icon-btn-wrapper:hover {
+  border-color: #3BA3D9;
+  color: #3BA3D9;
+  background: #f0f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 163, 217, 0.15);
+}
+
+/* Distinct Wishlist Style */
+.wishlist-wrapper {
+  border-color: #cbd5e1;
+  /* Slightly different border */
+}
+
+.wishlist-wrapper.active {
+  border-color: #fda4af;
+  background: #fff1f2;
+  color: #f43f5e;
+}
+
+.wishlist-wrapper:hover {
+  border-color: #f43f5e;
+  color: #f43f5e;
+  background: #fff1f2;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.15);
+}
+
+.action-icon.filled {
+  animation: heartPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* User Trigger (Profile Circle) */
+.user-trigger-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  /* Perfect Circle */
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+}
+
+.user-trigger-btn:hover {
+  border-color: #3BA3D9;
+  box-shadow: 0 4px 12px rgba(59, 163, 217, 0.2);
+}
+
+.user-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  /* Icon fills the circle */
+}
+
+/* Dropdown Animation */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  min-width: 280px;
+  z-index: 1001;
+  animation: slideInMenu 0.25s ease-out forwards;
+  transform-origin: top right;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+html[dir="rtl"] .dropdown-menu {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+/* 3. Bottom Nav */
+.bottom-nav {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+}
+
+.mobile-nav-header {
+  display: none !important;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000000 !important;
+  /* Force Pure Black */
+  font-weight: 800;
+  /* Extra Black Weight */
+  font-size: 1.05rem;
+  /* Larger for impact */
+  padding: 15px 0;
+  display: block;
+  position: relative;
+  transition: all 0.2s;
+  opacity: 1 !important;
+  text-shadow: 0 0 0.5px currentColor;
+  /* Artificial thickness */
+}
+
+.nav-item:hover {
+  color: #000000 !important;
+  /* Keep black on hover */
+  background-color: #f1f5f9;
+  /* Light gray background for contrast */
+  border-radius: 8px;
+  /* Smooth corners */
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0ea5e9;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  background: #2B9AD4 !important;
+  color: white !important;
+  border-radius: 20px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(43, 154, 212, 0.35);
+}
+
+.nav-item.active::after {
+  display: none !important;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #2d2f31;
+}
+
+/* RTL Support for Arabic */
+/* Note: In a real app, this should be handled by a global dir="rtl" on html/body */
+/* For now, assuming specific alignments */
+
+.header-search input:dir(rtl) {
+  padding: 12px 45px 12px 15px;
+}
+
+.header-search .search-btn:dir(rtl) {
+  right: 10px;
+  left: auto;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .top-bar-text {
+    display: none;
+  }
+
+  /* Fix Header Container for Mobile */
+  .header-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 12px 15px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* Row 1: Logo (Left) and Lang (Right) - Matching screenshot */
+  .header-logo {
+    order: 1 !important;
+    margin-right: 0 !important;
+  }
+
+  .header-logo h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .header-lang {
+    order: 2 !important;
+  }
+
+  /* Row 2: Icons (Heart and Cart on Left, Burger on Right) */
+  .header-actions {
+    order: 3 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    /* Start of icon group */
+    gap: 12px !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px !important;
+  }
+
+  /* Heart and Cart Group - Push to the left (Last in RTL visually) */
+  /* Correct logic to push Heart and Cart to the left while keeping Burger on Right */
+  /* In RTL: [Burger(Right)] [Login] [Cart(Left)] [Heart(Left)] */
+  .cart-action {
+    margin-inline-start: auto !important;
+    /* This pushes CART and everything after it (Heart) to the left */
+    order: 10 !important;
+  }
+
+  .wishlist-action {
+    order: 11 !important;
+    margin-inline-start: 0 !important;
+  }
+
+  /* Burger Menu - Move to the far right (First in RTL visually) */
+  .mobile-toggle {
+    order: -5 !important;
+    /* Extremely early visually in RTL (Far Right) */
+    display: flex !important;
+    align-items: center;
+    background: transparent !important;
+    font-size: 1.6rem !important;
+  }
+
+  /* Auth and Cart in the middle */
+  .auth-action {
+    order: -4 !important;
+    /* Visual: Right next to Burger in RTL */
+  }
+
+  .cart-action {
+    order: 10 !important;
+  }
+
+  /* Row 3: Search box below icons */
+  .header-search {
+    order: 4 !important;
+    width: 95% !important;
+    margin: 10px auto 0 !important;
+    /* Perfect center */
+  }
+
+  .header-search input {
+    font-size: 0.95rem;
+    padding: 12px 15px 12px 45px;
+    border-radius: 10px;
+  }
+
+  /* Unify Icon Sizes (Heart and Cart) */
+  .icon-btn-wrapper,
+  .cart-icon-wrapper {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    padding: 0 !important;
+    /* Remove individual padding to use box size */
+    font-size: 1.25rem !important;
+    border: 1px solid #9ca3af !important;
+    /* Unified border */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .user-trigger-btn {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  /* Mobile Drawer */
+  .bottom-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    max-width: 280px;
+    height: 100vh;
+    background: white;
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    border-top: none;
+    overflow-y: auto;
+  }
+
+  html[dir="rtl"] .bottom-nav {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .bottom-nav.active {
+    transform: translateX(0);
+  }
+
+  html[dir="rtl"] .bottom-nav.active {
+    transform: translateX(0);
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  .nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav-header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-item {
+    font-size: 1rem;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    background: #f8fafc;
+  }
+
+  .nav-item.active {
+    background: #2B9AD4 !important;
+    color: white;
+  }
+}
+
+/* Auth Dropdown Menu Styles */
+.auth-menu-container {
+  position: relative;
+  margin-left: 25px;
+}
+
+.auth-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px 18px;
+  border-radius: 50px;
+  transition: all 0.25s ease;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, #3BA3D9 0%, #0284c7 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(59, 163, 217, 0.3);
+}
+
+.auth-trigger:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  box-shadow: 0 4px 15px rgba(59, 163, 217, 0.4);
+  transform: translateY(-2px);
+}
+
+.auth-icon {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.chevron-icon {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s ease;
+}
+
+.auth-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 249, 255, 0.95) 100%);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1.5px solid rgba(59, 163, 217, 0.25);
+  border-radius: 18px;
+  box-shadow:
+    0 8px 32px rgba(59, 163, 217, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  min-width: 200px;
+  padding: 12px;
+  z-index: 1001;
+  animation: dropdownPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: top right;
+}
+
+@keyframes dropdownPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+html[dir="rtl"] .auth-dropdown {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.auth-dropdown-item {
+  display: block;
+  padding: 14px 28px;
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-dropdown-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3BA3D9 0%, #0284c7 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.auth-dropdown-item:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(59, 163, 217, 0.3);
+}
+
+.auth-dropdown-item:hover::before {
+  opacity: 1;
+}
+
+.auth-dropdown-item+.auth-dropdown-item {
+  margin-top: 8px;
+}

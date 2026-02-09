@@ -1,0 +1,103 @@
+/* Features Container */
+.features-container {
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 40px 0;
+    background: #f8fafc;
+    /* Light background for the strip */
+}
+
+.features-container.rtl {
+    direction: rtl;
+}
+
+.features-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 95%;
+    /* Use almost full screen width */
+    max-width: 1600px;
+    /* Very wide limit */
+    margin: 0 auto;
+}
+
+/* Feature Item (Card Style) */
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 280px;
+    padding: 25px;
+    background: #ffffff;
+    /* White card */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.rtl .feature-item {
+    text-align: right;
+    border: 1px solid #f1f5f9;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #e2e8f0;
+}
+
+/* Icons */
+.feature-icon {
+    font-size: 2.2rem;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+/* Text */
+.feature-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .features-wrapper {
+        justify-content: center;
+    }
+
+    .feature-item {
+        flex: 1 1 45%;
+        /* 2 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex: 1 1 100%;
+        /* Stack on mobile */
+    }
+}

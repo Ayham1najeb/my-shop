@@ -1,0 +1,406 @@
+/* ProductSidebar.css - Premium Glassmorphism Sidebar */
+
+.product-sidebar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: sticky;
+    top: 130px;
+    transition: all 0.3s ease;
+    min-width: 380px;
+    width: 380px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-sidebar:hover {
+    box-shadow: 0 15px 40px rgba(0, 96, 144, 0.1);
+    border-color: #3BA3D9;
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 25px;
+}
+
+.sidebar-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-icon {
+    color: #3BA3D9;
+}
+
+/* Search Input */
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    /* Space for icon on left (LTR) or right (RTL) - adjust for RTL below */
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper input:focus {
+    outline: none;
+    border-color: #3BA3D9;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(59, 163, 217, 0.1);
+}
+
+.search-icon-absolute {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    /* For LTR */
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+/* Scrollable Lists (Categories & Brands) */
+.scrollable-list {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 5px 15px 5px 15px;
+    /* Added padding for spacing */
+}
+
+/* Custom Scrollbar */
+.scrollable-list::-webkit-scrollbar {
+    width: 10px;
+    /* Wider scrollbar */
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 5px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* Custom Checkbox */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 35px;
+    /* Space for checkmark */
+    user-select: none;
+    font-size: 0.95rem;
+    color: #475569;
+    transition: color 0.2s;
+}
+
+.custom-checkbox:hover {
+    color: #3BA3D9;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover input~.checkmark {
+    border-color: #3BA3D9;
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: #3BA3D9;
+    border-color: #3BA3D9;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
+/* Color Swatches Grid */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.color-swatch {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.color-swatch.active {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px rgba(59, 163, 217, 0.4);
+    /* Blue ring */
+}
+
+/* Specific handling for white checkmark visibility */
+.color-swatch[title="أبيض"] span.color-check {
+    color: #333;
+}
+
+
+/* Price Inputs */
+.price-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.price-group {
+    flex: 1;
+}
+
+.price-group label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.price-group input {
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.price-group input:focus {
+    outline: none;
+    border-color: #3BA3D9;
+}
+
+.price-separator {
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+
+/* Visual Slider (Cosmetic) */
+.price-slider-visual {
+    margin-top: 15px;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    position: relative;
+    width: 100%;
+}
+
+.slider-range {
+    position: absolute;
+    height: 100%;
+    left: 20%;
+    right: 30%;
+    background: #3BA3D9;
+    border-radius: 2px;
+}
+
+/* Rating Options */
+.rating-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rating-row:hover {
+    background: #f1f5f9;
+}
+
+.rating-row.active {
+    background: #e0f2fe;
+    /* Light Blue */
+    border: 1px solid #bae6fd;
+}
+
+.stars {
+    display: flex;
+    color: #fbbf24;
+    /* Amber-400 */
+    font-size: 0.9rem;
+}
+
+.star-empty {
+    color: #e2e8f0;
+}
+
+.rating-text {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+
+/* Reset Button */
+.reset-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.reset-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+/* RTL Adjustments */
+/* If the parent has dir="rtl" or isRTL context */
+.search-input-wrapper input {
+    padding: 12px 40px 12px 15px;
+    /* Search icon on right */
+}
+
+.search-icon-absolute {
+    left: auto;
+    right: 12px;
+}
+
+.custom-checkbox {
+    padding-left: 0;
+    padding-right: 35px;
+}
+
+.custom-checkbox .checkmark {
+    left: auto;
+    right: 0;
+}
+
+
+.sidebar-mobile-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.close-sidebar-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.close-sidebar-btn:hover {
+    background: #e2e8f0;
+    color: #ef4444;
+}
+
+/* Responsive Show/Hide */
+@media (max-width: 900px) {
+    .sidebar-mobile-header {
+        display: flex;
+    }
+}

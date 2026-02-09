@@ -1,0 +1,117 @@
+/* ManageReviews.css */
+.manage-reviews-container {
+    padding: 20px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.manage-reviews-container h2 {
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.reviews-table-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+.reviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.reviews-table th,
+.reviews-table td {
+    padding: 16px;
+    text-align: right;
+    /* RTL */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.reviews-table th {
+    background: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+}
+
+.comment-cell {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #64748b;
+}
+
+.rating-badge {
+    background: #fffbeb;
+    color: #b45309;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-badge.pending {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #ffedd5;
+}
+
+.status-badge.approved {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #d1fae5;
+}
+
+.status-badge.rejected {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fee2e2;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-approve {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-approve:hover {
+    background: #059669;
+}
+
+.btn-reject {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-reject:hover {
+    background: #dc2626;
+}

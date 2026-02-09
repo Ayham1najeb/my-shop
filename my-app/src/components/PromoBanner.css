@@ -1,0 +1,326 @@
+.legendary-banner {
+    position: relative;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    /* Elegant Dark Slate Blue - Restored */
+    overflow: hidden;
+    margin: 40px 0;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Checkered Background Pattern */
+.banner-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.banner-bg-pattern::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.02) 75%, transparent 75%, transparent);
+    background-size: 100px 100px;
+}
+
+/* Moving Text Marquee */
+.banner-marquee {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    transform: rotate(-1deg);
+    z-index: 2;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+    color: #38bdf8;
+    /* Restored Blue Cyan */
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.banner-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+/* Visual Gallery - Enhanced Shuffle Animation */
+.banner-visual-gallery {
+    position: relative;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.image-card {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    border: 8px solid #fff;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backface-visibility: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-1 {
+    transform: rotate(-8deg) translateX(-60px);
+    z-index: 5;
+    animation: shuffle-1 9s ease-in-out infinite;
+}
+
+.card-2 {
+    transform: rotate(6deg) translateX(60px) translateY(20px);
+    z-index: 1;
+    animation: shuffle-2 9s ease-in-out infinite;
+}
+
+@keyframes shuffle-1 {
+
+    0%,
+    100% {
+        transform: rotate(-8deg) translateX(-60px) translateZ(50px);
+        z-index: 5;
+    }
+
+    25% {
+        transform: rotate(-4deg) translateX(0) translateZ(80px) scale(1.05);
+        z-index: 5;
+    }
+
+    50% {
+        transform: rotate(6deg) translateX(60px) translateY(20px) translateZ(-50px);
+        z-index: 1;
+    }
+
+    75% {
+        transform: rotate(0deg) translateX(0) translateZ(-80px) scale(0.95);
+        z-index: 1;
+    }
+}
+
+@keyframes shuffle-2 {
+
+    0%,
+    100% {
+        transform: rotate(6deg) translateX(60px) translateY(20px) translateZ(-50px);
+        z-index: 1;
+    }
+
+    25% {
+        transform: rotate(0deg) translateX(0) translateZ(-80px) scale(0.95);
+        z-index: 1;
+    }
+
+    50% {
+        transform: rotate(-8deg) translateX(-60px) translateZ(50px);
+        z-index: 5;
+    }
+
+    75% {
+        transform: rotate(-4deg) translateX(0) translateZ(80px) scale(1.05);
+        z-index: 5;
+    }
+}
+
+/* Animation interaction */
+.banner-visual-gallery:hover .image-card {
+    animation-play-state: paused;
+}
+
+.image-card:hover {
+    transform: scale(1.15) rotate(0) translateZ(120px) !important;
+    z-index: 1000 !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Text Content */
+.banner-text-content {
+    color: #fff;
+    text-align: right;
+}
+
+[dir="ltr"] .banner-text-content {
+    text-align: left;
+}
+
+.banner-badge-bubble {
+    display: inline-block;
+    background: #38bdf8;
+    /* Restored Blue */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.banner-main-title {
+    font-size: 4rem;
+    font-weight: 950;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.text-glow {
+    color: #38bdf8;
+    /* Restored Blue */
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.banner-discount-box {
+    margin-bottom: 30px;
+}
+
+.discount-value {
+    font-size: 5rem;
+    font-weight: 950;
+    line-height: 1;
+    color: #fff;
+    display: block;
+}
+
+.discount-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #38bdf8;
+    opacity: 0.9;
+}
+
+.banner-sub-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    opacity: 0.8;
+}
+
+[dir="ltr"] .banner-sub-text {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.banner-action-btn {
+    padding: 18px 45px;
+    background: #fff;
+    color: #0f172a;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.banner-action-btn:hover {
+    background: #38bdf8;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.banner-date-tag {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .legendary-banner {
+        overflow: hidden !important;
+        /* Extra safety for mobile */
+        padding: 60px 20px;
+    }
+
+    .banner-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    [dir="ltr"] .banner-text-content,
+    .banner-text-content {
+        text-align: center;
+    }
+
+    .banner-visual-gallery {
+        height: 400px;
+    }
+
+    .image-card {
+        width: 230px;
+        height: 320px;
+    }
+
+    .banner-main-title {
+        font-size: 2.5rem;
+    }
+
+    .discount-value {
+        font-size: 3.5rem;
+    }
+}

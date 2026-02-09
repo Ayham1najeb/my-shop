@@ -1,0 +1,5 @@
+1-create productContext (fetch product and provider and pass product )
+
+
+2- create product List and use UseContext receive  and map on products 
+<button onClick={() => removeFromCart(product)}>Remove From Cart</button>

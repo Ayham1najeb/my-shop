@@ -1,0 +1,401 @@
+/* Promotions Section - Mobile First Refactor */
+:root {
+    --mx: 50%;
+    --my: 50%;
+    --rx: 0deg;
+    --ry: 0deg;
+}
+
+.promotions-container {
+    padding: 60px 0;
+    /* Mobile Base */
+    background-color: #f1f5f9;
+    position: relative;
+    border-top: 1px solid #e2e8f0;
+}
+
+@media (min-width: 1024px) {
+    .promotions-container {
+        padding: 120px 0;
+    }
+}
+
+.promotions-header {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .promotions-header {
+        margin-bottom: 70px;
+    }
+}
+
+.promotions-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Mobile Base */
+    font-size: 1.5rem;
+    /* Mobile Base */
+    font-weight: 900;
+    margin: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #3BA3D9 50%, #006090 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1024px) {
+    .promotions-title {
+        font-size: 3rem;
+        gap: 15px;
+    }
+}
+
+.promotions-subtitle {
+    font-size: 0.9rem;
+    /* Mobile Base */
+    color: #64748b;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+    .promotions-subtitle {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+}
+
+.promotions-underline {
+    width: 60px;
+    /* Mobile Base */
+    height: 4px;
+    /* Mobile Base */
+    background: linear-gradient(90deg, #3BA3D9, #006090);
+    margin: 15px auto 0;
+    border-radius: 20px;
+}
+
+@media (min-width: 1024px) {
+    .promotions-underline {
+        width: 100px;
+        height: 6px;
+        margin-top: 25px;
+    }
+}
+
+/* Expert Grid Layout */
+.promotions-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Mobile Base: 2 Columns */
+    gap: 10px;
+    /* Mobile Base */
+    padding: 20px 10px;
+    max-width: 1850px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .promotions-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .promotions-grid-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 45px;
+        padding: 60px 40px 120px;
+        perspective: 2000px;
+    }
+}
+
+/* --- Expert Holographic Card --- */
+.promo-card.holo-interactive {
+    width: 100%;
+    height: auto;
+    /* Mobile Base */
+    background: #ffffff;
+    border-radius: 15px;
+    /* Mobile Base */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+    .promo-card.holo-interactive {
+        height: 550px;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        border-radius: 40px;
+        transition: transform 0.15s ease-out, box-shadow 0.4s ease;
+        transform: rotateX(var(--rx)) rotateY(var(--ry));
+        transform-style: preserve-3d;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.06);
+        padding-bottom: 0;
+    }
+}
+
+.holo-gloss {
+    display: none;
+    /* Disable on mobile for performance */
+}
+
+@media (min-width: 1024px) {
+    .holo-gloss {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+        background: radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.25) 0%, rgba(59, 163, 217, 0.4) 30%, transparent 70%);
+        mix-blend-mode: overlay;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .promo-card:hover .holo-gloss {
+        opacity: 1;
+    }
+}
+
+.promo-img-box {
+    height: 130px;
+    /* Mobile Base */
+    background: #ffffff;
+    padding: 15px;
+    /* Mobile Base */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .promo-img-box {
+        height: 270px;
+        padding: 40px;
+        transform: translateZ(50px);
+    }
+}
+
+.promo-img-box img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Professional Badge */
+.promo-discount-badge {
+    position: absolute;
+    top: 10px;
+    /* Mobile Base */
+    right: 10px;
+    /* Mobile Base */
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    padding: 4px 10px;
+    /* Mobile Base */
+    border-radius: 8px;
+    /* Mobile Base */
+    font-weight: 800;
+    font-size: 0.65rem;
+    /* Mobile Base */
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+    z-index: 6;
+}
+
+@media (min-width: 1024px) {
+    .promo-discount-badge {
+        top: 25px;
+        right: 25px;
+        padding: 10px 18px;
+        border-radius: 16px;
+        font-size: 0.95rem;
+        transform: translateZ(70px);
+    }
+}
+
+.promo-info {
+    padding: 10px;
+    /* Mobile Base */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+@media (min-width: 1024px) {
+    .promo-info {
+        padding: 30px;
+        transform: translateZ(30px);
+    }
+}
+
+.promo-title {
+    font-size: 0.85rem;
+    /* Mobile Base */
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    text-align: center;
+    /* Mobile Base */
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 34px;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .promo-title {
+        font-size: 1.15rem;
+        text-align: right;
+        height: 3.2em;
+        line-height: 1.4;
+    }
+}
+
+.promo-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Mobile Base */
+    justify-content: center;
+    /* Mobile Base */
+    margin: 8px 0;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .promo-price-row {
+        gap: 15px;
+        justify-content: flex-end;
+        margin: 15px 0;
+    }
+}
+
+.promo-price-old {
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .promo-price-old {
+        font-size: 1.1rem;
+    }
+}
+
+.promo-price-new {
+    color: #3BA3D9;
+    font-size: 1.1rem;
+    /* Mobile Base */
+    font-weight: 900;
+}
+
+@media (min-width: 1024px) {
+    .promo-price-new {
+        font-size: 1.8rem;
+    }
+}
+
+/* Action Buttons */
+.promo-actions {
+    display: flex;
+    /* Mobile Base */
+    justify-content: center;
+    gap: 5px;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .promo-actions {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 15px;
+    }
+}
+
+.btn-promo-cart {
+    background: #3BA3D9;
+    color: #ffffff;
+    border: none;
+    padding: 6px 10px;
+    /* Mobile Base */
+    border-radius: 50px;
+    /* Mobile Base */
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* Mobile Base */
+    font-size: 0.75rem;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .btn-promo-cart {
+        background: linear-gradient(135deg, #3BA3D9 0%, #006090 100%);
+        padding: 15px;
+        border-radius: 18px;
+        font-size: 1rem;
+        gap: 10px;
+    }
+}
+
+.btn-promo-details {
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    padding: 6px 10px;
+    /* Mobile Base */
+    border-radius: 50px;
+    /* Mobile Base */
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* Mobile Base */
+    font-size: 0.75rem;
+    /* Mobile Base */
+}
+
+@media (min-width: 1024px) {
+    .btn-promo-details {
+        padding: 15px;
+        border-radius: 18px;
+        border-width: 2px;
+        font-size: 1rem;
+        gap: 10px;
+    }
+}
