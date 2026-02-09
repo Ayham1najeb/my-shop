@@ -1215,3 +1215,37 @@ html[dir="rtl"] .auth-dropdown {
   z-index: 1 !important;
   position: relative !important;
 }
+
+/* ===== FIX DROPDOWN DESIGN ON MOBILE ===== */
+@media (max-width: 900px) {
+  .navbar-wrapper .auth-menu-container .auth-dropdown,
+  .sticky-wrapper .auth-menu-container .auth-dropdown,
+  .header-actions .auth-menu-container .auth-dropdown {
+    /* Fix positioning and width */
+    right: 10px !important;
+    left: auto !important;
+    width: 180px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+    
+    /* Fix design */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 249, 255, 0.95) 100%) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    border: 1.5px solid rgba(59, 163, 217, 0.25) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 32px rgba(59, 163, 217, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    padding: 12px !important;
+    
+    /* Ensure it doesn't overflow screen */
+    margin-right: 0 !important;
+  }
+  
+  html[dir="rtl"] .navbar-wrapper .auth-menu-container .auth-dropdown,
+  html[dir="rtl"] .sticky-wrapper .auth-menu-container .auth-dropdown,
+  html[dir="rtl"] .header-actions .auth-menu-container .auth-dropdown {
+    right: auto !important;
+    left: 10px !important;
+    margin-left: 0 !important;
+  }
+}
