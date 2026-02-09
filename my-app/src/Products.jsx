@@ -662,50 +662,53 @@ const Products = () => {
                display: flex;
             }
 
-            @media (max-width: 991px) {
-               .products-grid {
-                  grid-template-columns: repeat(2, 1fr) !important;
-                  gap: 12px !important; 
-               }
-               
-               .product-card {
-                   border-radius: 16px !important; 
+             @media (max-width: 991px) {
+                .products-grid {
+                   grid-template-columns: repeat(2, 1fr) !important;
+                   gap: 10px !important; 
                 }
-               .product-card h3 {
-                  font-size: 0.9rem !important; 
-                  height: 36px !important;
-                  margin-bottom: 8px !important;
-                  line-height: 1.3 !important;
-               }
-               .action-btn-primary {
-                  font-size: 0.85rem !important;
-                  padding: 8px !important;
-                  border-radius: 8px !important;
-                  gap: 4px !important;
-               }
-               .action-btn-secondary {
-                  flex: 0 0 38px !important;
-                  padding: 8px !important;
-                  border-radius: 8px !important;
-               }
-               .badge-discount {
-                  font-size: 10px !important;
-                  padding: 4px 8px !important;
-                  top: 10px !important;
-                  left: 10px !important;
-               }
-               /* Scaled product images */
-               .product-card a > div {
-                   height: 160px !important;
-                   padding: 12px !important;
-               }
-               .price-final {
-                   font-size: 1.1rem !important; 
-               }
-               .premium-title {
-                   font-size: 1.5rem !important;
-               }
-            }
+                
+                .product-card {
+                    border-radius: 12px !important; 
+                 }
+                .product-card h3 {
+                   font-size: 0.8rem !important; 
+                   height: 32px !important;
+                   margin-bottom: 6px !important;
+                   line-height: 1.2 !important;
+                }
+                .action-btn-primary {
+                   font-size: 0.75rem !important;
+                   padding: 6px !important;
+                   border-radius: 6px !important;
+                   gap: 3px !important;
+                }
+                .action-btn-secondary {
+                   flex: 0 0 32px !important;
+                   padding: 6px !important;
+                   border-radius: 6px !important;
+                }
+                .badge-discount {
+                   font-size: 9px !important;
+                   padding: 3px 6px !important;
+                   top: 8px !important;
+                   left: 8px !important;
+                }
+                /* Scaled product images */
+                .product-card a > div {
+                    height: 130px !important;
+                    padding: 8px !important;
+                }
+                .price-final {
+                    font-size: 0.95rem !important; 
+                }
+                .premium-title {
+                    font-size: 1.25rem !important;
+                }
+                .premium-subtitle {
+                    font-size: 0.85rem !important;
+                }
+             }
 
             .premium-header-container {
                 flex-direction: column;
