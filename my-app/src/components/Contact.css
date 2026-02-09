@@ -320,3 +320,21 @@
     padding: 30px;
   }
 }
+/* ===== MOBILE OVERRIDES FOR CONTACT PAGE ===== */
+@media (max-width: 767px) {
+  .contact-hero { padding: 50px 15px !important; margin-bottom: 20px !important; }
+  .contact-hero h1 { font-size: 1.4rem !important; margin-bottom: 10px !important; }
+  .contact-hero p { font-size: 0.8rem !important; line-height: 1.5 !important; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: -30px !important; margin-bottom: 30px !important; padding: 0 10px !important; }
+  .contact-card { padding: 18px !important; border-radius: 15px !important; }
+  .icon-wrapper { width: 45px !important; height: 45px !important; font-size: 1.1rem !important; margin-bottom: 12px !important; }
+  .contact-card h3 { font-size: 0.9rem !important; margin-bottom: 6px !important; }
+  .contact-card p { font-size: 0.7rem !important; }
+  .map-section { min-height: 250px !important; min-width: 100% !important; }
+  .form-section { padding: 18px 12px !important; min-width: 100% !important; }
+  .form-section h2 { font-size: 1.1rem !important; margin-bottom: 15px !important; }
+  .contact-form input, .contact-form textarea { padding: 10px 12px !important; font-size: 0.8rem !important; border-radius: 10px !important; }
+  .submit-btn { padding: 12px !important; font-size: 0.85rem !important; border-radius: 10px !important; gap: 8px !important; }
+  .social-links h3 { font-size: 0.85rem !important; margin-bottom: 10px !important; }
+  .social-icon { width: 38px !important; height: 38px !important; font-size: 0.95rem !important; }
+}

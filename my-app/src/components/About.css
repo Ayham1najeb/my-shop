@@ -220,3 +220,22 @@
     max-width: 300px;
   }
 }
+/* ===== MOBILE OVERRIDES FOR ABOUT PAGE ===== */
+@media (max-width: 767px) {
+  .about-hero { padding: 50px 15px 60px !important; }
+  .about-hero h1 { font-size: 1.4rem !important; margin-bottom: 10px !important; }
+  .about-hero p { font-size: 0.8rem !important; line-height: 1.5 !important; }
+  .about-stats { margin-top: -30px !important; margin-bottom: 50px !important; gap: 12px !important; }
+  .stat-item { padding: 18px !important; min-width: auto !important; border-radius: 12px !important; }
+  .stat-icon { font-size: 1.4rem !important; margin-bottom: 10px !important; }
+  .stat-item h3 { font-size: 1.2rem !important; margin-bottom: 5px !important; }
+  .stat-item p { font-size: 0.7rem !important; }
+  .about-cards { grid-template-columns: 1fr !important; gap: 12px !important; margin-bottom: 30px !important; }
+  .about-card { padding: 18px !important; border-radius: 12px !important; }
+  .card-icon-wrapper { width: 45px !important; height: 45px !important; font-size: 1.1rem !important; margin-bottom: 12px !important; }
+  .about-card h3 { font-size: 0.9rem !important; margin-bottom: 6px !important; }
+  .about-card p { font-size: 0.7rem !important; line-height: 1.4 !important; }
+  .about-cta-section { padding: 25px 15px !important; border-radius: 15px !important; }
+  .about-cta-section h2 { font-size: 1.1rem !important; margin-bottom: 12px !important; }
+  .cta-btn { padding: 10px 18px !important; font-size: 0.8rem !important; }
+}
