@@ -46,7 +46,8 @@ export const ProductProvider = ({ children }) => {
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
             'Pragma': 'no-cache',
-            'Expires': '0'
+            'Expires': '0',
+            'ngrok-skip-browser-warning': '1'
           }
         });
         if (!response.ok) {
@@ -131,7 +132,8 @@ export const ProductProvider = ({ children }) => {
       fetch(`${API_URL}/api/wishlist`, {
         headers: {
           "Authorization": `Bearer ${token}`,
-          "Accept": "application/json"
+          "Accept": "application/json",
+          "ngrok-skip-browser-warning": "1"
         }
       })
         .then(res => res.json())
@@ -165,7 +167,8 @@ export const ProductProvider = ({ children }) => {
       headers: {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "ngrok-skip-browser-warning": "1"
       },
       body: JSON.stringify({ product_id: product.id })
     }).catch(err => console.error("Sync error", err));
@@ -183,7 +186,8 @@ export const ProductProvider = ({ children }) => {
       headers: {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "ngrok-skip-browser-warning": "1"
       },
       body: JSON.stringify({ product_id: productId })
     }).catch(err => console.error("Sync error", err));
