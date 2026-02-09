@@ -1249,3 +1249,37 @@ html[dir="rtl"] .auth-dropdown {
     margin-left: 0 !important;
   }
 }
+
+/* ===== ABSOLUTE FINAL FIX - DROPDOWN MUST BE ABOVE SLIDER ===== */
+@media (max-width: 900px) {
+  /* Force dropdown to use FIXED positioning with very high z-index */
+  .auth-dropdown {
+    position: fixed !important;
+    top: 180px !important;
+    right: 15px !important;
+    left: auto !important;
+    width: 180px !important;
+    z-index: 999999999 !important;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 249, 255, 0.95) 100%) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    border: 1.5px solid rgba(59, 163, 217, 0.25) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 32px rgba(59, 163, 217, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    padding: 12px !important;
+  }
+  
+  html[dir="rtl"] .auth-dropdown {
+    right: auto !important;
+    left: 15px !important;
+  }
+  
+  /* Ensure slider stays FAR below */
+  .hero-slider-wrapper,
+  .hero-slider-wrapper *,
+  .slick-slider,
+  .slick-list,
+  .slick-track,
+  .slick-slide {
+    z-index: 1 !important;
+  }
+}

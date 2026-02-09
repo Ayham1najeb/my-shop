@@ -496,3 +496,73 @@
     background: #3BA3D9 !important;
   }
 }
+
+/* ===== INCREASE SLIDER SIZE + FIX DOTS + HIDE DUPLICATE DOTS ===== */
+@media (max-width: 767px) {
+  /* Increase slider height */
+  .hero-slide-content {
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.1rem !important;
+  }
+  
+  .hero-text p {
+    font-size: 0.75rem !important;
+  }
+  
+  .hero-btn {
+    padding: 7px 14px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* HIDE DUPLICATE DOTS - Keep only slick-dots */
+  .hero-slider-wrapper .slick-dots {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    z-index: 10 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .hero-slider-wrapper .slick-dots li {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .hero-slider-wrapper .slick-dots li button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.6) !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    cursor: pointer !important;
+  }
+  
+  .hero-slider-wrapper .slick-dots li.slick-active button {
+    background: #3BA3D9 !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  /* Hide any other pagination elements */
+  .hero-slider-wrapper .pagination,
+  .hero-slider-wrapper .swiper-pagination {
+    display: none !important;
+  }
+}
