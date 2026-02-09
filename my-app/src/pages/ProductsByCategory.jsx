@@ -24,7 +24,7 @@ const ProductsByCategory = () => {
   const getCategory = React.useCallback((name) => {
     if (!name) return 'all';
     return categoryMap[name.toLowerCase()] || name.toLowerCase();
-  }, []);
+  }, [categoryMap]);
 
   const initialCategory = getCategory(categoryName);
 
@@ -50,7 +50,7 @@ const ProductsByCategory = () => {
   // COPY OF LOGIC FROM Products.jsx to ensure consistency
   const augmentedProducts = useMemo(() => {
     const brandsList = ['nike', 'adidas', 'puma', 'zara', 'h_m', 'apple', 'samsung', 'lc_waikiki'];
-    const colorsList = ['black', 'white', 'red', 'blue', 'green', 'yellow', 'purple', 'gray'];
+    // const colorsList = ['black', 'white', 'red', 'blue', 'green', 'yellow', 'purple', 'gray'];
 
     return products.map((product, index) => {
       const brandIndex = product.id % brandsList.length;

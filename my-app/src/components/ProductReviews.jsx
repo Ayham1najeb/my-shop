@@ -10,7 +10,7 @@ const ProductReviews = ({ productId }) => {
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
     const [hover, setHover] = useState(0);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [submitted, setSubmitted] = useState(false);
     const { language } = useLanguage();
 
