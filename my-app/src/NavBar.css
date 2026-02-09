@@ -581,14 +581,11 @@ html[dir="rtl"] .dropdown-menu {
   }
 
   .header-logo h2 {
-    font-size: 1.1rem !important;
-    letter-spacing: -0.5px;
+    font-size: 1.3rem !important;
   }
 
   .header-lang {
     order: 2 !important;
-    transform: scale(0.85);
-    transform-origin: right;
   }
 
   /* Row 2: Icons (Heart and Cart on Left, Burger on Right) */
@@ -597,59 +594,81 @@ html[dir="rtl"] .dropdown-menu {
     width: 100% !important;
     display: flex !important;
     justify-content: flex-start !important;
-    gap: 10px !important;
+    /* Start of icon group */
+    gap: 12px !important;
     margin-left: 0 !important;
     padding-right: 0 !important;
     border-top: 1px solid #f1f5f9;
-    padding-top: 8px !important;
+    padding-top: 10px !important;
   }
 
-  /* Burger Menu */
+  /* Heart and Cart Group - Push to the left (Last in RTL visually) */
+  /* Correct logic to push Heart and Cart to the left while keeping Burger on Right */
+  /* In RTL: [Burger(Right)] [Login] [Cart(Left)] [Heart(Left)] */
+  .cart-action {
+    margin-inline-start: auto !important;
+    /* This pushes CART and everything after it (Heart) to the left */
+    order: 10 !important;
+  }
+
+  .wishlist-action {
+    order: 11 !important;
+    margin-inline-start: 0 !important;
+  }
+
+  /* Burger Menu - Move to the far right (First in RTL visually) */
   .mobile-toggle {
     order: -5 !important;
+    /* Extremely early visually in RTL (Far Right) */
     display: flex !important;
     align-items: center;
     background: transparent !important;
-    font-size: 1.4rem !important;
-    width: 36px !important;
-    height: 36px !important;
+    font-size: 1.6rem !important;
   }
 
-  /* Auth, Wishlist, Cart */
+  /* Auth and Cart in the middle */
   .auth-action {
     order: -4 !important;
+    /* Visual: Right next to Burger in RTL */
   }
 
-  .auth-trigger {
-    padding: 6px 14px !important;
-    font-size: 0.85rem !important;
+  .cart-action {
+    order: 10 !important;
   }
 
   /* Row 3: Search box below icons */
   .header-search {
     order: 4 !important;
-    width: 100% !important;
-    margin: 8px 0 0 !important;
+    width: 95% !important;
+    margin: 10px auto 0 !important;
+    /* Perfect center */
   }
 
   .header-search input {
-    font-size: 0.85rem !important;
-    padding: 10px 15px 10px 40px !important;
-    border-radius: 8px !important;
+    font-size: 0.95rem;
+    padding: 12px 15px 12px 45px;
+    border-radius: 10px;
   }
 
   /* Unify Icon Sizes (Heart and Cart) */
   .icon-btn-wrapper,
   .cart-icon-wrapper {
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 8px !important;
-    font-size: 1.1rem !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+    padding: 0 !important;
+    /* Remove individual padding to use box size */
+    font-size: 1.25rem !important;
+    border: 1px solid #9ca3af !important;
+    /* Unified border */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .user-trigger-btn {
-    width: 38px !important;
-    height: 38px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 
   /* Mobile Drawer */
