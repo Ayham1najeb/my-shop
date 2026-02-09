@@ -566,3 +566,26 @@
     display: none !important;
   }
 }
+
+/* ===== HIDE ALL DUPLICATE DOTS - KEEP ONLY SLICK DOTS ===== */
+@media (max-width: 767px) {
+  /* Hide any custom pagination that might be duplicating */
+  .hero-slider-wrapper .custom-dots,
+  .hero-slider-wrapper .slider-pagination,
+  .hero-slider-wrapper .carousel-indicators,
+  .hero-slider-wrapper > .pagination,
+  .hero-slide-content .pagination {
+    display: none !important;
+  }
+  
+  /* Ensure ONLY slick-dots are visible */
+  .hero-slider-wrapper .slick-dots {
+    display: flex !important;
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+  }
+}
