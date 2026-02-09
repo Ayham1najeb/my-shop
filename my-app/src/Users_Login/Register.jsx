@@ -85,8 +85,29 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-page register-page" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      {/* Left Side - Form */}
+    <div className="auth-page" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      {/* Left Side - Branding */}
+      <div className="auth-branding">
+        <div className="branding-content">
+          <div className="brand-logo">
+            <span>MYSHOP</span>
+          </div>
+          <h1 className="brand-headline">
+            {language === 'ar' ? 'انضم إلينا اليوم!' : 'Join Us Today!'}
+          </h1>
+          <p className="brand-subtext">
+            {language === 'ar'
+              ? 'أنشئ حسابك واستمتع بتجربة تسوق مميزة'
+              : 'Create your account and enjoy a premium shopping experience'}
+          </p>
+        </div>
+        <div className="branding-decoration">
+          <div className="deco-circle deco-1"></div>
+          <div className="deco-circle deco-2"></div>
+        </div>
+      </div>
+
+      {/* Right Side - Form */}
       <div className="auth-form-section">
         <div className="auth-form-container large-form">
           <div className="form-header">
@@ -190,27 +211,6 @@ const Register = () => {
               </Link>
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Right Side - Branding */}
-      <div className="auth-branding register-branding">
-        <div className="branding-content">
-          <div className="brand-logo">
-            <span>MYSHOP</span>
-          </div>
-          <h1 className="brand-headline">
-            {language === 'ar' ? 'انضم إلينا!' : 'Join Us!'}
-          </h1>
-          <p className="brand-subtext">
-            {language === 'ar'
-              ? 'أنشئ حسابك واحصل على عروض حصرية'
-              : 'Create your account and get exclusive offers'}
-          </p>
-        </div>
-        <div className="branding-decoration">
-          <div className="deco-circle deco-1"></div>
-          <div className="deco-circle deco-2"></div>
         </div>
       </div>
     </div>
