@@ -461,25 +461,25 @@
     background-color: #3BA3D9;
     color: white;
     border: none;
-    padding: 5px 8px;
-    /* Mobile Base - Very Compact */
+    padding: 4px 6px;
+    /* Mobile Base - Extra Compact */
     border-radius: 50px;
     /* Mobile Base - Pill shape */
-    font-weight: 800;
-    font-size: 0.6rem;
-    /* Mobile Base - Drastically Reduced */
+    font-weight: 700;
+    font-size: 0.55rem;
+    /* Mobile Base - Extra Small */
     cursor: pointer;
     transition: all 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    /* Mobile Base - Reduced */
-    box-shadow: 0 4px 8px rgba(59, 163, 217, 0.2);
+    gap: 2px;
+    /* Mobile Base - Very Reduced */
+    box-shadow: 0 2px 6px rgba(59, 163, 217, 0.2);
     margin: 0 auto;
     /* Mobile Base - Centered */
-    min-height: 26px;
-    /* Mobile Base - Reduced */
+    min-height: 22px;
+    /* Mobile Base - Very Reduced */
     max-width: 90%;
 }
 
