@@ -888,3 +888,9 @@ html[dir="rtl"] .auth-dropdown {
   .nav-item { z-index: 5002 !important; pointer-events: auto !important; cursor: pointer !important; }
   .nav-item a, .nav-item button { pointer-events: auto !important; cursor: pointer !important; }
 }
+
+/* ===== FIX DROPDOWN MENU Z-INDEX ===== */
+.auth-menu-container { z-index: 10000 !important; }
+.dropdown-menu { z-index: 10001 !important; }
+.user-menu-container { z-index: 10000 !important; }
+.auth-dropdown { z-index: 10001 !important; }
