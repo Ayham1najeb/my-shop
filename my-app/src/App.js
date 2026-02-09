@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import CartDrawer from './components/CartDrawer';
 import ScrollToTop from './components/ScrollToTop';
+import './GlobalMobile.css'; // Global mobile optimizations
 
 // Pages - Root
 import Home from './pages/Home';

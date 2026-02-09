@@ -1,0 +1,161 @@
+/* ===== MOBILE OPTIMIZATIONS FOR ALL PAGES ===== */
+
+/* Products Page Mobile Optimization */
+@media (max-width: 767px) {
+
+    /* Filter Section */
+    .filters-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        height: 100vh !important;
+        width: 280px !important;
+        background: white !important;
+        z-index: 3000 !important;
+        transition: left 0.3s ease !important;
+        padding: 20px !important;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1) !important;
+        overflow-y: auto !important;
+    }
+
+    .filters-sidebar.open {
+        left: 0 !important;
+    }
+
+    /* Filter Toggle Button */
+    .filter-toggle-btn {
+        display: block !important;
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        background: #3BA3D9 !important;
+        color: white !important;
+        border: none !important;
+        padding: 12px 20px !important;
+        border-radius: 50px !important;
+        font-size: 0.9rem !important;
+        box-shadow: 0 4px 12px rgba(59, 163, 217, 0.3) !important;
+        z-index: 2999 !important;
+        cursor: pointer !important;
+    }
+
+    /* Categories */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .category-card {
+        padding: 15px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .category-card h3 {
+        font-size: 0.85rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .category-card p {
+        font-size: 0.7rem !important;
+    }
+}
+
+/* About Us Page Mobile Optimization */
+@media (max-width: 767px) {
+    .about-hero {
+        padding: 40px 15px !important;
+    }
+
+    .about-hero h1 {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .about-hero p {
+        font-size: 0.85rem !important;
+    }
+
+    .about-section {
+        padding: 30px 15px !important;
+    }
+
+    .about-section h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .about-section p {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .team-card {
+        padding: 15px !important;
+    }
+
+    .team-card h3 {
+        font-size: 1rem !important;
+    }
+
+    .team-card p {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Contact Us Page Mobile Optimization */
+@media (max-width: 767px) {
+    .contact-container {
+        padding: 20px 15px !important;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .contact-hero p {
+        font-size: 0.85rem !important;
+    }
+
+    .contact-form-wrapper {
+        padding: 20px 15px !important;
+    }
+
+    .contact-form h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        font-size: 0.85rem !important;
+        padding: 10px 12px !important;
+    }
+
+    .contact-form label {
+        font-size: 0.8rem !important;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem !important;
+        padding: 12px 24px !important;
+    }
+
+    .contact-info {
+        padding: 15px !important;
+    }
+
+    .contact-info-item {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .contact-info-item h3 {
+        font-size: 1rem !important;
+    }
+}
