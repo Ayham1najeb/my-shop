@@ -403,4 +403,38 @@
     .sidebar-mobile-header {
         display: flex;
     }
+
+    /* NUCLEAR MOBILE FIX: Eliminate top gap and force full height */
+    .product-sidebar {
+        position: static !important;
+        top: 0 !important;
+        margin: 0 !important;
+        padding: 10px 15px !important;
+        height: 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
+        backdrop-filter: none !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+
+    .sidebar-section {
+        margin-bottom: 20px !important;
+        padding-bottom: 15px !important;
+    }
+
+    .sidebar-title {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .scrollable-list {
+        max-height: 180px !important;
+    }
+
+    .custom-checkbox {
+        font-size: 0.85rem !important;
+    }
 }
