@@ -4,10 +4,9 @@
    Import this LAST to override everything
    ======================================== */
 
-/* ===== CATEGORIES PAGE - FORCE SMALL CARDS ===== */
 @media (max-width: 767px) {
 
-    /* Force category cards to be VERY small */
+    /* 1. CATEGORIES PAGE */
     .category-card,
     .category-card.holo-interactive,
     .holo-interactive.category-card,
@@ -18,7 +17,6 @@
         border-radius: 10px !important;
     }
 
-    /* Force grid layout */
     .categories-grid,
     .categories-container .categories-grid {
         display: grid !important;
@@ -27,26 +25,18 @@
         padding: 0 8px !important;
     }
 
-    /* Force text size */
     .cat-name,
-    .category-card .cat-name,
-    .category-card.holo-interactive .cat-name {
+    .category-card .cat-name {
         font-size: 0.65rem !important;
         line-height: 1.2 !important;
     }
 
-    /* Force overlay */
     .cat-overlay {
         padding: 5px !important;
     }
-}
 
-/* ===== ABOUT PAGE - FIX TEXT OVERFLOW ===== */
-@media (max-width: 767px) {
-
-    /* Force page container */
+    /* 2. ABOUT PAGE */
     .about-page,
-    .about-page *,
     .about-container,
     .about-page .container {
         max-width: 100vw !important;
@@ -54,131 +44,125 @@
         box-sizing: border-box !important;
     }
 
-    /* Force stats section */
-    .about-stats,
-    .about-page .about-stats {
+    .about-hero {
+        padding: 30px 15px !important;
+    }
+
+    .about-hero h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .about-hero p {
+        font-size: 0.85rem !important;
+        word-wrap: break-word !important;
+    }
+
+    .about-stats {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
+        gap: 15px !important;
         margin-top: 0 !important;
         width: 100% !important;
     }
 
-    /* Force stat items */
-    .stat-item,
-    .about-stats .stat-item {
+    .stat-item {
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 15px !important;
+        padding: 20px !important;
         box-sizing: border-box !important;
+        height: auto !important;
     }
 
-    /* Force stat icons */
-    .stat-icon,
-    .stat-item .stat-icon {
-        font-size: 1.5rem !important;
-        margin-bottom: 8px !important;
+    .stat-icon {
+        font-size: 1.8rem !important;
+        margin-bottom: 10px !important;
     }
 
-    /* Force stat text */
     .stat-item h3 {
-        font-size: 1.2rem !important;
+        font-size: 1.4rem !important;
     }
 
     .stat-item p {
-        font-size: 0.75rem !important;
+        font-size: 0.85rem !important;
+        word-wrap: break-word !important;
+    }
+
+    .about-cards {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .about-card {
+        width: 100% !important;
+        padding: 25px 20px !important;
+        box-sizing: border-box !important;
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .card-icon-wrapper {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .about-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+        font-weight: 700 !important;
+    }
+
+    .about-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
+        white-space: normal !important;
     }
 
-    /* Force cards section */
-    .about-cards,
-    .about-page .about-cards {
-        .about-cards .about-card p {
-            font-size: 0.85rem !important;
-            line-height: 1.6 !important;
-            word-wrap: break-word !important;
-            overflow-wrap: break-word !important;
-            white-space: normal !important;
-            color: #64748b !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            width: 100% !important;
-            margin: 0 !important;
-        }
-
-        /* Force hero section */
-        .about-hero {
-            padding: 30px 15px !important;
-        }
-
-        .about-hero h1 {
-            font-size: 1.3rem !important;
-        }
-
-        .about-hero p {
-            font-size: 0.8rem !important;
-        }
+    /* 3. PRODUCTS BY CATEGORY PAGE */
+    .products-layout>div:last-child>div[style*='grid'] {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        padding: 0 8px !important;
     }
 
-    /* ===== PRODUCTS BY CATEGORY PAGE - MATCH MAIN PRODUCT LIST ===== */
-    @media (max-width: 767px) {
-
-        /* Force product grid to 2 columns */
-        .products-layout>div:last-child>div[style*='grid'] {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 8px !important;
-            padding: 0 8px !important;
-        }
-
-        /* Force product cards to match main list */
-        .product-card {
-            max-width: 100% !important;
-            min-height: auto !important;
-            padding: 8px !important;
-        }
-
-        /* Match image size to main list - 100px */
-        .product-card>div:first-child,
-        .product-card .image-container,
-        .product-card img {
-            height: 100px !important;
-            max-height: 100px !important;
-            min-height: 100px !important;
-            object-fit: cover !important;
-        }
-
-        /* Compact text */
-        .product-card h3,
-        .product-card .product-title {
-            font-size: 0.75rem !important;
-            line-height: 1.2 !important;
-            margin: 4px 0 !important;
-            height: 24px !important;
-            overflow: hidden !important;
-        }
-
-        .product-card .product-price,
-        .product-card [style*='fontSize'] {
-            font-size: 0.85rem !important;
-            margin: 4px 0 !important;
-        }
-
-        /* Compact buttons */
-        .product-card button,
-        .action-btn-primary,
-        .action-btn-secondary {
-            padding: 6px 10px !important;
-            font-size: 0.7rem !important;
-            min-height: 28px !important;
-        }
-
-        /* Hide or shrink badges */
-        .product-card .badge,
-        .badge-discount {
-            font-size: 0.6rem !important;
-            padding: 2px 6px !important;
-        }
+    .product-card {
+        max-width: 100% !important;
+        padding: 8px !important;
+        height: auto !important;
     }
+
+    .product-card>div:first-child,
+    .product-card .image-container,
+    .product-card img {
+        height: 100px !important;
+        max-height: 100px !important;
+        object-fit: contain !important;
+    }
+
+    .product-card h3,
+    .product-card .product-title {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+        height: 28px !important;
+        overflow: hidden !important;
+    }
+
+    .product-card .product-price {
+        font-size: 0.8rem !important;
+    }
+
+    .product-card button {
+        padding: 5px !important;
+        font-size: 0.65rem !important;
+        min-height: 26px !important;
+    }
+}
