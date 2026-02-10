@@ -645,6 +645,10 @@ const Products = () => {
                flex-direction: column;
             }
             
+            .mobile-filter-toggle {
+               display: flex !important;
+            }
+            
             /* NUCLEAR FIX: High Z-Index for Mobile Filter Drawer */
             .product-sidebar-container {
                position: fixed !important;
