@@ -1,24 +1,23 @@
 import React, { useContext, useEffect, useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ProductContext } from "../ProductContext";
-import ProductSidebar from "../components/ProductSidebar";
 import "../MobileFixes.css"; // Ensure mobile fixes are applied
-import { FaShoppingCart, FaEye, FaStar, FaSortAmountDown, FaGem } from "react-icons/fa";
+import { FaShoppingCart, FaEye, FaStar, FaGem } from "react-icons/fa";
+import { useLanguage } from "../LanguageContext";
 
 // Map URL param to internal category IDs if needed, or just use as is
-// Adjust this map based on your actual data structure in Products.jsx
 const categoryMap = {
   men: 'men',
   women: 'women',
   kids: 'kids',
   jewelery: 'jewelery',
   electronics: 'electronics',
-  // add more mappings if your URL params differ from internal IDs
 };
 
 const ProductsByCategory = () => {
   const { categoryName } = useParams();
   const { products, setSelectedProduct, addToCart } = useContext(ProductContext);
+  const { t, language } = useLanguage();
   const discountedIds = [3, 8, 11, 6, 9];
   const discountRate = 0.7;
 
@@ -27,35 +26,14 @@ const ProductsByCategory = () => {
     return categoryMap[name.toLowerCase()] || name.toLowerCase();
   }, []);
 
-  const initialCategory = getCategory(categoryName);
-
-  // Filter & Sort State
-  const [filters, setFilters] = useState({
-    minPrice: '',
-    maxPrice: '',
-    categories: [initialCategory], // Initialize with active category
-    brands: [],
-    colors: [],
-    minRating: null,
-    searchQuery: '',
-    sortBy: 'default'
-  });
-
-  // Update filters if URL category changes
-  useEffect(() => {
-    const newCategory = getCategory(categoryName);
-    setFilters(prev => ({ ...prev, categories: [newCategory] }));
-  }, [categoryName, getCategory]);
+  const activeCategory = getCategory(categoryName);
 
   // Data Augmentation (Mocking Brands, Colors, Ratings for Demo)
-  // COPY OF LOGIC FROM Products.jsx to ensure consistency
   const augmentedProducts = useMemo(() => {
     const brandsList = ['nike', 'adidas', 'puma', 'zara', 'h_m', 'apple', 'samsung', 'lc_waikiki'];
-    // const colorsList = ['black', 'white', 'red', 'blue', 'green', 'yellow', 'purple', 'gray'];
 
     return products.map((product, index) => {
       const brandIndex = product.id % brandsList.length;
-      // const colorIndex = (product.id * 2) % colorsList.length;
       const rating = (product.id % 5) + 1;
 
       let catId = 'others';
@@ -73,7 +51,6 @@ const ProductsByCategory = () => {
       return {
         ...product,
         brand: brandsList[brandIndex],
-        // color: colorsList[colorIndex],
         rating: rating > 5 ? 5 : rating,
         categoryId: catId
       };
@@ -81,56 +58,10 @@ const ProductsByCategory = () => {
   }, [products]);
 
 
-  // Filter & Logic
+  // Simple Category-only Filtering
   const filteredProducts = useMemo(() => {
-    let result = augmentedProducts.filter(product => {
-      // 1. Search Filter
-      if (filters.searchQuery && !product.title.toLowerCase().includes(filters.searchQuery.toLowerCase())) {
-        return false;
-      }
-
-      // 2. Category Filter
-      if (filters.categories.length > 0) {
-        // Broaden matching: check if product.categoryId matches OR plain category string
-        const catMatch = filters.categories.includes(product.categoryId);
-        if (!catMatch) return false;
-      }
-
-      // 3. Price Filter
-      const price = parseFloat(product.price);
-      if (filters.minPrice && price < parseFloat(filters.minPrice)) return false;
-      if (filters.maxPrice && price > parseFloat(filters.maxPrice)) return false;
-
-      // 4. Brand Filter
-      if (filters.brands.length > 0 && !filters.brands.includes(product.brand)) {
-        return false;
-      }
-
-      // 5. Color Filter
-      if (filters.colors.length > 0) {
-        const productColors = product.colors || [];
-        const hasColor = productColors.some(c => filters.colors.includes(c.name.toLowerCase()));
-        const mockColorMatch = product.color && filters.colors.includes(product.color);
-        if (!hasColor && !mockColorMatch) return false;
-      }
-
-      // 6. Rating Filter
-      if (filters.minRating && product.rating < filters.minRating) {
-        return false;
-      }
-
-      return true;
-    });
-
-    // Sorting Logic
-    if (filters.sortBy === 'priceLowHigh') {
-      result.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-    } else if (filters.sortBy === 'priceHighLow') {
-      result.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-    }
-
-    return result;
-  }, [augmentedProducts, filters]);
+    return augmentedProducts.filter(product => product.categoryId === activeCategory);
+  }, [augmentedProducts, activeCategory]);
 
   const handleAddToCart = (product) => {
     const finalPrice = discountedIds.includes(product.id)
@@ -181,68 +112,18 @@ const ProductsByCategory = () => {
       </div>
 
       <div className="products-layout" style={{
-        display: "flex",
-        gap: "40px",
         maxWidth: "1600px",
         margin: "0 auto",
-        alignItems: "flex-start"
       }}>
 
-        {/* Sidebar Component */}
-        <div className="product-sidebar-container" style={{ flex: "0 0 360px" }}>
-          <ProductSidebar filters={filters} setFilters={setFilters} fixedCategory={initialCategory} />
-        </div>
+        {/* Product Grid - Full Width */}
+        <div style={{ width: "100%", minWidth: 0 }}>
 
-        {/* Product Grid */}
-        <div style={{ flex: "1" }}>
-
-          {/* Controls Bar (Count & Sort) */}
-          <div style={{
-            marginBottom: "40px",
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: 'white',
-            padding: '15px 25px',
-            borderRadius: '12px',
-            boxShadow: '0 2px 10px rgba(0,0,0,0.03)'
-          }}>
-            <span style={{ color: "#64748b", fontWeight: "600" }}>
-              نتائج البحث: <span style={{ color: "#3BA3D9" }}>{filteredProducts.length}</span> قطعة
+          {/* Simple Results Count */}
+          <div style={{ marginBottom: '20px', textAlign: language === 'ar' ? 'right' : 'left' }}>
+            <span style={{ color: "#64748b", fontWeight: "600", fontSize: '0.9rem' }}>
+              {t('results_found') || 'نتائج البحث'}: <span style={{ color: "#3BA3D9" }}>{filteredProducts.length}</span> {t('items') || 'قطعة'}
             </span>
-
-            <div className="sort-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: "#475569" }}>
-                <FaSortAmountDown style={{ fontSize: "1.2rem", color: "#3BA3D9" }} />
-                <span style={{ fontSize: "1.1rem", fontWeight: "700" }}>ترتيب حسب:</span>
-              </div>
-              <select
-                value={filters.sortBy}
-                onChange={(e) => setFilters({ ...filters, sortBy: e.target.value })}
-                style={{
-                  minWidth: "240px",
-                  padding: "12px 24px",
-                  borderRadius: "12px",
-                  border: "2px solid #e2e8f0",
-                  color: "#0f172a",
-                  backgroundColor: "#f8fafc",
-                  outline: "none",
-                  cursor: "pointer",
-                  fontWeight: "600",
-                  fontSize: "1rem",
-                  transition: "all 0.2s",
-                  boxShadow: "0 2px 5px rgba(0,0,0,0.02)",
-                  textAlign: "center",
-                  textAlignLast: "center"
-                }}
-                onMouseOver={(e) => e.target.style.borderColor = "#3BA3D9"}
-                onMouseOut={(e) => e.target.style.borderColor = "#e2e8f0"}
-              >
-                <option value="default">الأحدث</option>
-                <option value="priceLowHigh">السعر: من الأقل للأعلى</option>
-                <option value="priceHighLow">السعر: من الأعلى للأقل</option>
-              </select>
-            </div>
           </div>
 
           {filteredProducts.length === 0 ? (
