@@ -543,111 +543,93 @@
         width: 95% !important;
     }
 
-    /* 7. PRODUCTS FILTER (PRODUCT SIDEBAR) OPTIMIZATION */
-    .product-sidebar {
-        min-width: 0 !important;
-        /* Reset 380px fixed width */
+    /* 7. NEW NUCLEAR PRODUCTS FILTER (COMPACT & SMALL) */
+    .products-layout .product-sidebar-container .product-sidebar {
+        min-width: 100% !important;
         width: 100% !important;
-        padding: 15px !important;
-        box-shadow: none !important;
-        border: none !important;
-        background: transparent !important;
-        /* Managed by parent drawer */
+        padding: 12px !important;
+        background: white !important;
+        height: 100% !important;
     }
 
-    .sidebar-section {
-        margin-bottom: 20px !important;
-        padding-bottom: 15px !important;
+    .products-layout .sidebar-section {
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+        border-bottom: 1px solid #f1f5f9 !important;
     }
 
-    .sidebar-title {
-        font-size: 0.9rem !important;
-        margin-bottom: 15px !important;
-        gap: 8px !important;
-    }
-
-    .sidebar-icon {
-        font-size: 1rem !important;
-    }
-
-    .search-input-wrapper input {
-        padding: 10px 12px 10px 35px !important;
-        font-size: 0.85rem !important;
-        border-radius: 8px !important;
-    }
-
-    .scrollable-list {
-        max-height: 180px !important;
-        gap: 8px !important;
-        padding: 0 5px !important;
-    }
-
-    .custom-checkbox {
-        font-size: 0.85rem !important;
-        padding-left: 0 !important;
-        padding-right: 30px !important;
-        /* Support for RTL */
-    }
-
-    .custom-checkbox .checkmark {
-        width: 18px !important;
-        height: 18px !important;
-        border-radius: 4px !important;
-    }
-
-    .color-grid {
-        grid-template-columns: repeat(5, 1fr) !important;
-        /* More per row */
-        gap: 8px !important;
-    }
-
-    .color-swatch {
-        width: 30px !important;
-        height: 30px !important;
-    }
-
-    .price-group input {
-        padding: 6px !important;
+    .products-layout .sidebar-title {
         font-size: 0.8rem !important;
-        border-radius: 6px !important;
+        margin-bottom: 10px !important;
+        gap: 6px !important;
+        font-weight: 700 !important;
     }
 
-    .price-separator {
-        padding: 0 4px !important;
+    .products-layout .sidebar-icon {
+        font-size: 0.85rem !important;
     }
 
-    .rating-row {
-        padding: 5px 8px !important;
+    .products-layout .search-input-wrapper input {
+        padding: 8px 10px 8px 30px !important;
+        font-size: 0.8rem !important;
+        height: 34px !important;
+    }
+
+    .products-layout .scrollable-list {
+        max-height: 150px !important;
         gap: 6px !important;
     }
 
-    .stars {
+    .products-layout .custom-checkbox {
+        font-size: 0.8rem !important;
+        padding-right: 25px !important;
+    }
+
+    .products-layout .custom-checkbox .checkmark {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .products-layout .color-grid {
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .products-layout .color-swatch {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .products-layout .price-group input {
+        padding: 4px 6px !important;
         font-size: 0.75rem !important;
+        height: 30px !important;
     }
 
-    .rating-text {
-        font-size: 0.75rem !important;
+    .products-layout .stars {
+        font-size: 0.7rem !important;
     }
 
-    .sidebar-footer {
-        padding-top: 15px !important;
+    .products-layout .rating-text {
+        font-size: 0.7rem !important;
     }
 
-    .reset-btn {
-        padding: 10px !important;
-        font-size: 0.85rem !important;
-        border-radius: 10px !important;
+    .products-layout .reset-btn {
+        padding: 8px !important;
+        font-size: 0.8rem !important;
+        border-radius: 8px !important;
+        margin-top: 5px !important;
     }
 
-    .sidebar-mobile-header {
+    .products-layout .sidebar-mobile-header {
         margin-bottom: 15px !important;
-        padding-bottom: 10px !important;
+        height: 40px !important;
     }
 
-    .close-sidebar-btn {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 1rem !important;
+    .products-layout .close-sidebar-btn {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.9rem !important;
     }
 }
 

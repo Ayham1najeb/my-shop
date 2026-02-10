@@ -5,6 +5,7 @@ import { ProductContext } from "./ProductContext";
 import ProductSidebar from "./components/ProductSidebar";
 import { FaShoppingCart, FaEye, FaStar, FaSortAmountDown, FaGem, FaFilter, FaTimes } from "react-icons/fa";
 import { useLanguage } from './LanguageContext';
+import './MobileFixes.css';
 
 const Products = () => {
   const { products, setSelectedProduct, addToCart } = useContext(ProductContext);
@@ -621,45 +622,61 @@ const Products = () => {
                flex-direction: column;
             }
             
-            /* Hide Sidebar by default on mobile */
+            /* NUCLEAR FIX: High Z-Index for Mobile Filter Drawer */
             .product-sidebar-container {
-               position: fixed;
-               top: 0;
-               left: 0;
-               width: 100%;
-               height: 100%;
-               z-index: 10005; /* Higher than navbar z-index */
-               background: rgba(0,0,0,0.5);
+               position: fixed !important;
+               top: 0 !important;
+               left: 0 !important;
+               width: 100vw !important;
+               height: 100vh !important;
+               z-index: 999999 !important; /* Beat any Navbar */
+               background: rgba(0,0,0,0.6) !important;
                visibility: hidden;
                opacity: 0;
-               transition: all 0.3s;
-               display: flex;
-               justify-content: flex-end; /* Drawer from right */
+               transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+               display: flex !important;
+               justify-content: ${language === 'ar' ? 'flex-start' : 'flex-end'} !important;
             }
             
             .product-sidebar-container.active {
-               visibility: visible;
-               opacity: 1;
+               visibility: visible !important;
+               opacity: 1 !important;
             }
             
-            /* Allow access to sidebar content */
+            /* Drawer Content - SOFT AND SMALL */
             .product-sidebar-container > * {
-                width: 85%;
-                max-width: 380px;
-                height: 100%;
-                background: white;
-                transform: translateX(${language === 'ar' ? '-100%' : '100%'});
-                transition: transform 0.3s ease;
-                overflow-y: auto;
-                box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+                width: 78% !important; 
+                max-width: 320px !important;
+                height: 100% !important;
+                background: white !important;
+                transform: translateX(${language === 'ar' ? '-100%' : '100%'}) !important;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                overflow-y: auto !important;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.2) !important;
             }
             
             .product-sidebar-container.active > * {
-                transform: translateX(0);
+                transform: translateX(0) !important;
             }
 
             .mobile-filter-toggle {
-               display: flex;
+               display: flex !important;
+            }
+
+            /* Ultra-Compact Filter Items Specificity */
+            .products-layout .product-sidebar-container .product-sidebar {
+                min-width: 100% !important; 
+                padding: 12px !important;
+            }
+            .products-layout .sidebar-section {
+                margin-bottom: 15px !important;
+                padding-bottom: 12px !important;
+            }
+            .products-layout .sidebar-title {
+                font-size: 0.85rem !important;
+            }
+            .products-layout .custom-checkbox {
+                font-size: 0.8rem !important;
             }
 
              @media (max-width: 991px) {
