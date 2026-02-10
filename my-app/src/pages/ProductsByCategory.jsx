@@ -264,6 +264,10 @@ const ProductsByCategory = () => {
                   borderRadius: "10px",
                   cursor: "pointer",
                   fontWeight: "bold",
+                  fontSize: "1rem"
+                }}
+              >
+                إعادة تعيين الفلتر 🔄
               </button>
             </div>
           ) : (
