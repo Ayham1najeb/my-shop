@@ -676,7 +676,7 @@ const Products = () => {
                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                 overflow-y: auto !important;
                 box-shadow: -10px 0 30px rgba(0,0,0,0.2) !important;
-                padding-top: 5px !important;
+                padding-top: 0 !important; /* Remove top gap */
             }
             
             .product-sidebar-container.active > * {
@@ -690,42 +690,46 @@ const Products = () => {
             /* Ultra-Compact Filter Items Specificity */
             .products-layout .product-sidebar-container .product-sidebar {
                 min-width: 100% !important; 
-                padding: 8px 10px !important;
+                padding: 5px 10px !important; /* Extremely tight */
                 background: white !important;
+                margin-top: 0 !important;
             }
             .sidebar-mobile-header {
-                padding: 0 10px !important;
-                height: 35px !important;
+                padding: 5px 10px !important;
+                height: auto !important;
+                margin-bottom: 5px !important;
             }
             .products-layout .sidebar-section {
-                margin-bottom: 10px !important;
-                padding-bottom: 8px !important;
+                margin-bottom: 8px !important;
+                padding-bottom: 6px !important;
             }
             .products-layout .sidebar-title {
                 font-size: 0.75rem !important;
-                margin-bottom: 6px !important;
+                margin-bottom: 5px !important;
             }
             .products-layout .custom-checkbox {
                 font-size: 0.7rem !important;
-                margin-bottom: 4px !important;
+                margin-bottom: 3px !important;
             }
             .products-layout .scrollable-list {
-                max-height: 130px !important;
-                gap: 4px !important;
+                max-height: 120px !important;
+                gap: 3px !important;
             }
             .products-layout .sidebar-icon {
-                font-size: 0.75rem !important;
+                font-size: 0.7rem !important;
             }
 
              @media (max-width: 991px) {
                 .products-grid {
                    grid-template-columns: repeat(2, 1fr) !important;
-                   gap: 6px !important; 
+                   gap: 8px !important; 
                 }
                 
                 .product-card {
-                    border-radius: 10px !important;
+                    border-radius: 15px !important; /* Softer corners as requested */
                     padding: 0 !important;
+                    overflow: hidden !important;
+                    border: 1px solid #f1f5f9 !important;
                  }
                  
                 /* Product card image container */
