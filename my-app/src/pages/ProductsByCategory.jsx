@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ProductContext } from "../ProductContext";
 import ProductSidebar from "../components/ProductSidebar";
+import "../MobileFixes.css"; // Ensure mobile fixes are applied
 import { FaShoppingCart, FaEye, FaStar, FaSortAmountDown, FaGem } from "react-icons/fa";
 
 // Map URL param to internal category IDs if needed, or just use as is
