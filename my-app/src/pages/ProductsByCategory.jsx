@@ -325,8 +325,10 @@ const ProductsByCategory = () => {
                           src={product.image}
                           alt={product.title}
                           style={{
-                            width: "100%",
-                            height: "100%",
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            width: "auto",
+                            height: "auto",
                             objectFit: "contain",
                             transition: "transform 0.5s ease",
                           }}
