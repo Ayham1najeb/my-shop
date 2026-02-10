@@ -141,15 +141,15 @@
     }
 
     .cat-product-image-container {
-        height: 140px !important;
-        /* Fixed height for consistency */
+        height: 180px !important;
+        /* Increased for full image visibility */
         background: #f8f8f8 !important;
-        padding: 5px !important;
-        /* Reduced padding */
+        padding: 8px !important;
         border-radius: 10px 10px 0 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        overflow: hidden !important;
     }
 
     /* MORE SPECIFIC SELECTOR TO WIN AGAINST GENERIC .product-card img */
