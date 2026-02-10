@@ -677,61 +677,32 @@ const Products = () => {
                 box-shadow: -10px 0 30px rgba(0,0,0,0.2) !important;
                 display: flex !important;
                 flex-direction: column !important;
-                padding-top: 0 !important;
+                padding: 0 !important; /* NO PADDING AT TOP */
             }
             
             .product-sidebar-container.active > * {
                 transform: translateX(0) !important;
             }
 
-            /* Ultra-Compact Filter Items Specificity */
-            .products-layout .product-sidebar-container .product-sidebar {
-                min-width: 100% !important; 
-                width: 100% !important;
-                height: 100% !important; /* Force 100% height */
-                padding: 10px 15px !important;
-                background: white !important;
-                margin: 0 !important;
+            /* Force filter content to top */
+            .product-sidebar-container .product-sidebar {
                 position: relative !important;
-                top: 0 !important; /* FORCE AT TOP */
-                left: 0 !important;
-                right: 0 !important;
-                border: none !important;
-                box-shadow: none !important;
-                display: block !important;
-                overflow-y: auto !important;
-                backdrop-filter: none !important;
+                top: 0 !important;
+                margin-top: 0 !important;
+                height: 100% !important;
+                border-radius: 0 !important;
+                padding-top: 0 !important;
             }
             
             .sidebar-mobile-header {
                 display: flex !important;
                 padding: 10px 15px !important;
-                height: auto !important;
-                margin: 0 0 10px 0 !important;
-                border-bottom: 1px solid #f1f5f9 !important;
+                margin: 0 !important;
                 background: white !important;
+                border-bottom: 1px solid #f1f5f9 !important;
                 position: sticky !important;
                 top: 0 !important;
                 z-index: 10 !important;
-            }
-            .products-layout .sidebar-section {
-                margin-bottom: 8px !important;
-                padding-bottom: 6px !important;
-            }
-            .products-layout .sidebar-title {
-                font-size: 0.75rem !important;
-                margin-bottom: 5px !important;
-            }
-            .products-layout .custom-checkbox {
-                font-size: 0.7rem !important;
-                margin-bottom: 3px !important;
-            }
-            .products-layout .scrollable-list {
-                max-height: 120px !important;
-                gap: 3px !important;
-            }
-            .products-layout .sidebar-icon {
-                font-size: 0.7rem !important;
             }
 
              @media (max-width: 991px) {
