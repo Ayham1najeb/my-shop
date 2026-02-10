@@ -20,7 +20,6 @@ const DashboardHome = () => {
         order_status: [],
         recent_activities: [],
         sales_data: [],
-        sales_data: [],
         daily_visits: 0,
         monthly_visits: 0,
         // Comparison
@@ -67,25 +66,27 @@ const DashboardHome = () => {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             const data = await res.json();
-            setStats(prev => ({
-                ...prev,
-                total_users: data.total_users,
-                total_products: data.total_products,
-                total_orders: data.total_orders,
-                total_revenue: data.total_revenue,
-                aov: data.aov,
-                conversion_rate: data.conversion_rate,
-                recent_activities: data.recent_activities,
-                top_selling_products: data.top_selling_products,
-                order_status: data.order_status,
-                sales_data: data.sales_data,
-                daily_visits: data.daily_visits,
-                monthly_visits: data.monthly_visits,
-                today_orders: data.today_orders,
-                yesterday_orders: data.yesterday_orders,
-                visits_growth: data.visits_growth,
-                orders_growth: data.orders_growth
-            }));
+            if (data) {
+                setStats(prev => ({
+                    ...prev,
+                    total_users: data.total_users || 0,
+                    total_products: data.total_products || 0,
+                    total_orders: data.total_orders || 0,
+                    total_revenue: data.total_revenue || 0,
+                    aov: data.aov || 0,
+                    conversion_rate: data.conversion_rate || 0,
+                    recent_activities: data.recent_activities || [],
+                    top_selling_products: data.top_selling_products || [],
+                    order_status: data.order_status || [],
+                    sales_data: data.sales_data || [],
+                    daily_visits: data.daily_visits || 0,
+                    monthly_visits: data.monthly_visits || 0,
+                    today_orders: data.today_orders || 0,
+                    yesterday_orders: data.yesterday_orders || 0,
+                    visits_growth: data.visits_growth || 0,
+                    orders_growth: data.orders_growth || 0
+                }));
+            }
         } catch (err) {
             console.error("Dashboard Fetch Error", err);
         } finally {
@@ -121,10 +122,12 @@ const DashboardHome = () => {
         csvRows.push([]); // Empty line
 
         // Sales Data Section
-        csvRows.push(["تاريخ المبيعات (آخر 7 أيام)", "المبلغ"]);
-        stats.sales_data.forEach(item => {
-            csvRows.push([item.name, item.sales]);
-        });
+        if (Array.isArray(stats.sales_data)) {
+            csvRows.push(["تاريخ المبيعات (آخر 7 أيام)", "المبلغ"]);
+            stats.sales_data.forEach(item => {
+                csvRows.push([item.name, item.sales]);
+            });
+        }
 
         // Convert to CSV String with BOM for Arabic support
         const csvString = '\uFEFF' + csvRows.map(e => e.join(",")).join("\n");
@@ -336,7 +339,8 @@ const DashboardHome = () => {
                         <div className="top-products-list" style={{ padding: '0 20px' }}>
                             {stats.top_selling_products.length > 0 ? (
                                 stats.top_selling_products.map((product, index) => {
-                                    const maxSales = Math.max(...stats.top_selling_products.map(p => p.sales));
+                                    const products = Array.isArray(stats.top_selling_products) ? stats.top_selling_products : [];
+                                    const maxSales = products.length > 0 ? Math.max(...products.map(p => p.sales || 0)) : 1;
                                     const percentage = (product.sales / maxSales) * 100;
 
                                     return (

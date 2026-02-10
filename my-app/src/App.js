@@ -54,23 +54,6 @@ const InnerLayout = ({ children }) => {
   const location = useLocation();
   const isAdminPath = location.pathname.startsWith('/admin');
 
-  // Proactive Admin Check (Render-time)
-  const userInfoStr = localStorage.getItem('user_info');
-  if (userInfoStr) {
-    try {
-      const user = JSON.parse(userInfoStr);
-      if (user) {
-        const isAdminUser = user.role === 'admin' || user.email === 'admin@gmail.com';
-        if (isAdminUser && !isAdminPath) {
-          // Redirect instantly if admin lands on a public path
-          window.location.href = "/admin/dashboard";
-          return null; // Stop rendering the public site children
-        }
-      }
-    } catch (e) {
-      console.error("Auth check error", e);
-    }
-  }
 
   return (
     <div className="app-container">
