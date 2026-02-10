@@ -275,7 +275,7 @@ const ProductsByCategory = () => {
               style={{
                 display: "grid",
                 gridTemplateColumns: window.innerWidth <= 767 ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(250px, 1fr))",
-                gap: window.innerWidth <= 767 ? "12px" : "25px",
+                gap: window.innerWidth <= 767 ? "8px" : "25px",
                 padding: window.innerWidth <= 767 ? "0 8px" : "0",
               }}
             >
@@ -311,9 +311,9 @@ const ProductsByCategory = () => {
                     >
                       <div
                         style={{
-                          height: window.innerWidth <= 767 ? "120px" : "240px",
+                          height: window.innerWidth <= 767 ? "100px" : "240px",
                           overflow: "hidden",
-                          padding: window.innerWidth <= 767 ? "10px" : "20px",
+                          padding: window.innerWidth <= 767 ? "8px" : "20px",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -343,7 +343,7 @@ const ProductsByCategory = () => {
 
                     <div
                       style={{
-                        padding: window.innerWidth <= 767 ? "12px" : "20px",
+                        padding: window.innerWidth <= 767 ? "8px" : "20px",
                         flexGrow: 1,
                         display: "flex",
                         flexDirection: "column",
