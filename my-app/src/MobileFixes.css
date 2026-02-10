@@ -261,6 +261,177 @@
         font-size: 0.65rem !important;
         min-height: 26px !important;
     }
+
+    /* 4. CART PAGE OPTIMIZATION */
+    .cart-page {
+        padding: 20px 10px !important;
+    }
+
+    .cart-breadcrumb {
+        padding: 10px 15px !important;
+        font-size: 11px !important;
+        margin-bottom: 15px !important;
+        gap: 8px !important;
+    }
+
+    .breadcrumb-current {
+        padding: 4px 12px !important;
+    }
+
+    .cart-header {
+        padding: 12px 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .cart-header h2 {
+        font-size: 18px !important;
+    }
+
+    .header-subtitle,
+    .price-text {
+        font-size: 13px !important;
+    }
+
+    .header-icon-box {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 18px !important;
+    }
+
+    .cart-item-card {
+        padding: 12px !important;
+        gap: 12px !important;
+        flex-direction: row !important;
+        /* Keep horizontal but smaller */
+        align-items: flex-start !important;
+    }
+
+    .item-image {
+        width: 70px !important;
+        height: 70px !important;
+        padding: 5px !important;
+    }
+
+    .item-details h4 {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .item-price,
+    .price-val {
+        font-size: 14px !important;
+    }
+
+    .qty-group {
+        height: 32px !important;
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        margin-top: 10px !important;
+    }
+
+    .qty-btn,
+    .qty-value {
+        width: 32px !important;
+        min-width: 32px !important;
+        font-size: 14px !important;
+    }
+
+    .delete-icon {
+        width: 30px !important;
+        height: 30px !important;
+        top: 10px !important;
+        left: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .cart-summary {
+        width: 100% !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .summary-header {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .summary-row {
+        font-size: 14px !important;
+        padding: 8px !important;
+    }
+
+    .total-row {
+        font-size: 18px !important;
+    }
+
+    .checkout-page-btn {
+        padding: 12px !important;
+        font-size: 16px !important;
+        margin-top: 20px !important;
+    }
+
+    /* 5. WISHLIST PAGE OPTIMIZATION */
+    .wishlist-page {
+        padding: 20px 10px !important;
+    }
+
+    .wishlist-header {
+        margin-bottom: 25px !important;
+        padding-bottom: 15px !important;
+    }
+
+    .wishlist-header h1 {
+        font-size: 1.4rem !important;
+        gap: 10px !important;
+    }
+
+    .wishlist-count-badge {
+        padding: 5px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .back-btn {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 10px !important;
+    }
+
+    .wishlist-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .wishlist-card-media {
+        height: 140px !important;
+        padding: 15px !important;
+    }
+
+    .wishlist-card-content {
+        padding: 12px !important;
+    }
+
+    .wishlist-card h3 {
+        font-size: 0.75rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .price-tag {
+        font-size: 0.95rem !important;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px !important;
+        font-size: 0.7rem !important;
+        max-width: none !important;
+    }
+
+    .remove-btn {
+        width: 30px !important;
+        height: 30px !important;
+        top: 8px !important;
+        right: 8px !important;
+    }
 }
 
 /* DESKTOP DEFAULTS (Safe fallback) */
