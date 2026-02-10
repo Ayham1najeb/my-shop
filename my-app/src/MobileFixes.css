@@ -163,33 +163,63 @@
         mix-blend-mode: multiply !important;
     }
 
-    /* Override padding in content area */
+    /* Override padding in content area - COMPACT */
     .cat-products-grid>div>div:last-child {
-        padding: 10px !important;
+        padding: 6px 8px !important;
     }
 
-    /* Compact text for square cards */
+    /* ULTRA COMPACT text for square cards */
     .cat-products-grid .product-card h3,
     .cat-products-grid .product-card .product-title {
-        font-size: 0.75rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 6px !important;
+        font-size: 0.65rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 4px !important;
         height: auto !important;
-        max-height: 2.6em !important;
+        max-height: 2.4em !important;
         overflow: hidden !important;
+        font-weight: 600 !important;
     }
 
+    /* Brand name - smaller */
+    .cat-products-grid .product-card span[style*="0.75rem"] {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.3px !important;
+    }
+
+    /* Color dots - smaller */
+    .cat-products-grid .product-card div[style*="12px"] {
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    /* Price - compact */
     .cat-products-grid .product-card .product-price {
-        font-size: 0.85rem !important;
+        font-size: 0.75rem !important;
         font-weight: 700 !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 6px !important;
     }
 
+    /* Rating stars - smaller */
+    .cat-products-grid .product-card .rating-stars,
+    .cat-products-grid .product-card div[style*="gap"] {
+        font-size: 0.65rem !important;
+        gap: 2px !important;
+    }
+
+    /* Buttons - ultra compact */
     .cat-products-grid .product-card button {
-        padding: 6px 10px !important;
-        font-size: 0.7rem !important;
-        min-height: 28px !important;
-        border-radius: 6px !important;
+        padding: 4px 8px !important;
+        font-size: 0.65rem !important;
+        min-height: 24px !important;
+        border-radius: 5px !important;
+    }
+
+    /* Eye icon button - smaller */
+    .cat-products-grid .product-card button svg,
+    .cat-products-grid .product-card button[style*="background: transparent"] {
+        width: 18px !important;
+        height: 18px !important;
+        padding: 3px !important;
     }
 
     /* 3. PRODUCTS BY CATEGORY PAGE */
