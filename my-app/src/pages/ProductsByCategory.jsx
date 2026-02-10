@@ -311,9 +311,9 @@ const ProductsByCategory = () => {
                     >
                       <div
                         style={{
-                          height: window.innerWidth <= 767 ? "50px" : "240px",
+                          height: window.innerWidth <= 767 ? "40px" : "240px",
                           overflow: "hidden",
-                          padding: window.innerWidth <= 767 ? "8px" : "20px",
+                          padding: window.innerWidth <= 767 ? "5px" : "20px",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
