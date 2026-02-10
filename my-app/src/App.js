@@ -59,11 +59,13 @@ const InnerLayout = ({ children }) => {
   if (userInfoStr) {
     try {
       const user = JSON.parse(userInfoStr);
-      const isAdminUser = user.role === 'admin' || user.email === 'admin@gmail.com';
-      if (isAdminUser && !isAdminPath) {
-        // Redirect instantly if admin lands on a public path
-        window.location.href = "/admin/dashboard";
-        return null; // Stop rendering the public site children
+      if (user) {
+        const isAdminUser = user.role === 'admin' || user.email === 'admin@gmail.com';
+        if (isAdminUser && !isAdminPath) {
+          // Redirect instantly if admin lands on a public path
+          window.location.href = "/admin/dashboard";
+          return null; // Stop rendering the public site children
+        }
       }
     } catch (e) {
       console.error("Auth check error", e);
