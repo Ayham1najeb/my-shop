@@ -165,7 +165,7 @@ const Products = () => {
   };
 
   return (
-    <div style={{ padding: "40px 20px", backgroundColor: "#f8fafc", minHeight: "100vh" }}>
+    <div style={{ padding: window.innerWidth <= 767 ? "40px 8px" : "40px 20px", backgroundColor: "#f8fafc", minHeight: "100vh" }}>
 
       {/* Premium Header */}
       <div className="premium-header-container">
@@ -712,7 +712,7 @@ const Products = () => {
              @media (max-width: 991px) {
                 .products-grid {
                    grid-template-columns: repeat(2, 1fr) !important;
-                   gap: 15px !important; 
+                   gap: 20px !important; 
                 }
                 
                 .product-card {
