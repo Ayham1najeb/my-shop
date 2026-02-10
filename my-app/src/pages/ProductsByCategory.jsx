@@ -264,18 +264,14 @@ const ProductsByCategory = () => {
                   borderRadius: "10px",
                   cursor: "pointer",
                   fontWeight: "bold",
-                  fontSize: "1rem"
-                }}
-              >
-                إعادة تعيين الفلتر 🔄
               </button>
             </div>
           ) : (
             <div
+              className="cat-products-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: window.innerWidth <= 767 ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(250px, 1fr))",
-                gap: window.innerWidth <= 767 ? "8px" : "25px",
+                // Grid columns handled in CSS
                 padding: window.innerWidth <= 767 ? "0 8px" : "0",
               }}
             >
@@ -310,28 +306,19 @@ const ProductsByCategory = () => {
                       style={{ textDecoration: "none", color: "inherit", position: "relative" }}
                     >
                       <div
+                        className="cat-product-image-container"
                         style={{
-                          height: window.innerWidth <= 767 ? "120px" : "240px",
-                          overflow: "visible",
-                          padding: "0",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          background: window.innerWidth <= 767 ? "#f8f8f8" : "white",
-                          position: "relative"
+                          position: "relative",
+                          overflow: "hidden"
                         }}
                       >
                         <img
                           src={product.image}
                           alt={product.title}
-                          style={{
-                            maxWidth: window.innerWidth <= 767 ? "90%" : "100%",
-                            maxHeight: window.innerWidth <= 767 ? "90%" : "100%",
-                            width: "auto",
-                            height: "auto",
-                            objectFit: "contain",
-                            transition: "transform 0.5s ease",
-                          }}
+                          className="cat-product-img"
                         />
 
                         {/* Discount Badge */}
@@ -608,7 +595,7 @@ const ProductsByCategory = () => {
           }
         `}
       </style>
-    </div>
+    </div >
   );
 };
 

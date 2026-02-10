@@ -126,6 +126,41 @@
         white-space: normal !important;
     }
 
+    /* 3. PRODUCTS BY CATEGORY PAGE - NEW ROBUST CLASSES */
+    .cat-products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Target the product card wrapper inside the map */
+    .cat-products-grid>div {
+        /* This targets the product card div */
+        border-radius: 10px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .cat-product-image-container {
+        height: 140px !important;
+        /* Fixed height for consistency */
+        background: #f8f8f8 !important;
+        padding: 10px !important;
+        border-radius: 10px 10px 0 0 !important;
+    }
+
+    .cat-product-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        mix-blend-mode: multiply !important;
+        /* Helps image blend with grey bg if white bg exists */
+    }
+
+    /* Override padding in content area */
+    .cat-products-grid>div>div:last-child {
+        padding: 10px !important;
+    }
+
     /* 3. PRODUCTS BY CATEGORY PAGE */
     .products-layout>div:last-child>div[style*='grid'] {
         display: grid !important;
@@ -164,5 +199,25 @@
         padding: 5px !important;
         font-size: 0.65rem !important;
         min-height: 26px !important;
+    }
+}
+
+/* DESKTOP DEFAULTS (Safe fallback) */
+@media (min-width: 768px) {
+    .cat-products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+        gap: 25px !important;
+    }
+
+    .cat-product-image-container {
+        height: 220px !important;
+        background: #fff !important;
+        padding: 20px !important;
+    }
+
+    .cat-product-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
     }
 }
