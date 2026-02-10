@@ -134,23 +134,28 @@ const ProductsByCategory = () => {
               borderRadius: "20px",
               boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
             }}>
-              <h3 style={{ color: "#94a3b8", fontSize: '1.5rem', marginBottom: '10px' }}>عذراً، لا توجد نتائج في هذا القسم! 😔</h3>
-              <p style={{ color: "#cbd5e1", marginBottom: '20px' }}>جرب تغيير الفلاتر للحصول على نتائج.</p>
-              <button
-                onClick={() => setFilters({ minPrice: '', maxPrice: '', categories: [initialCategory], brands: [], colors: [], minRating: null, searchQuery: '', sortBy: 'default' })}
+              <h3 style={{ color: "#94a3b8", fontSize: '1.5rem', marginBottom: '10px' }}>
+                {language === 'ar' ? 'عذراً، لا توجد منتجات في هذا القسم حالياً! 😔' : 'Sorry, no products in this category yet! 😔'}
+              </h3>
+              <p style={{ color: "#cbd5e1", marginBottom: '20px' }}>
+                {language === 'ar' ? 'تصفح بقية الأقسام للحصول على أفضل العروض.' : 'Check other categories for the best offers.'}
+              </p>
+              <Link
+                to="/products"
                 style={{
+                  display: 'inline-block',
                   padding: "12px 25px",
                   background: "#3BA3D9",
                   color: "white",
-                  border: "none",
+                  textDecoration: 'none',
                   borderRadius: "10px",
                   cursor: "pointer",
                   fontWeight: "bold",
                   fontSize: "1rem"
                 }}
               >
-                إعادة تعيين الفلتر 🔄
-              </button>
+                {language === 'ar' ? 'مشاهدة كافة المنتجات' : 'View All Products'}
+              </Link>
             </div>
           ) : (
             <div
