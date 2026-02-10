@@ -96,8 +96,44 @@
 }
 
 @media (max-width: 768px) {
+    .features-container {
+        padding: 20px 0 !important;
+        margin-bottom: 30px !important;
+    }
+
+    .features-wrapper {
+        width: 100% !important;
+        padding: 0 15px !important;
+        gap: 12px !important;
+    }
+
     .feature-item {
         flex: 1 1 100%;
-        /* Stack on mobile */
+        padding: 12px 15px !important;
+        /* Thinner cards */
+        gap: 12px !important;
+        /* Smaller gap internal */
+        min-width: auto !important;
+        border-radius: 10px !important;
+    }
+
+    .feature-icon {
+        width: 42px !important;
+        /* Smaller circular icon */
+        height: 42px !important;
+        font-size: 1.35rem !important;
+        /* Smaller icon glyph */
+    }
+
+    .feature-text h3 {
+        font-size: 0.9rem !important;
+        /* Compact titles */
+        margin-bottom: 2px !important;
+    }
+
+    .feature-text p {
+        font-size: 0.75rem !important;
+        /* Compact subtitles */
+        line-height: 1.3 !important;
     }
 }
