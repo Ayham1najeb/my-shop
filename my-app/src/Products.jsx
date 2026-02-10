@@ -690,14 +690,21 @@ const Products = () => {
             /* Ultra-Compact Filter Items Specificity */
             .products-layout .product-sidebar-container .product-sidebar {
                 min-width: 100% !important; 
+                width: 100% !important;
                 padding: 5px 10px !important; /* Extremely tight */
-                background: white !important;
+                background: transparent !important; /* Use drawer background */
                 margin-top: 0 !important;
+                position: relative !important; /* Kill sticky */
+                top: 0 !important; /* Kill top: 130px */
+                border: none !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
             }
             .sidebar-mobile-header {
                 padding: 5px 10px !important;
                 height: auto !important;
                 margin-bottom: 5px !important;
+                border-bottom: 1px solid #f1f5f9 !important;
             }
             .products-layout .sidebar-section {
                 margin-bottom: 8px !important;
