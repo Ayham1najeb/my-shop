@@ -674,37 +674,45 @@ const Products = () => {
                 background: white !important;
                 transform: translateX(${language === 'ar' ? '-100%' : '100%'}) !important;
                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-                overflow-y: auto !important;
                 box-shadow: -10px 0 30px rgba(0,0,0,0.2) !important;
-                padding-top: 0 !important; /* Remove top gap */
+                display: flex !important;
+                flex-direction: column !important;
+                padding-top: 0 !important;
             }
             
             .product-sidebar-container.active > * {
                 transform: translateX(0) !important;
             }
 
-            .mobile-filter-toggle {
-               display: flex !important;
-            }
-
             /* Ultra-Compact Filter Items Specificity */
             .products-layout .product-sidebar-container .product-sidebar {
                 min-width: 100% !important; 
                 width: 100% !important;
-                padding: 5px 10px !important; /* Extremely tight */
-                background: transparent !important; /* Use drawer background */
-                margin-top: 0 !important;
-                position: relative !important; /* Kill sticky */
-                top: 0 !important; /* Kill top: 130px */
+                height: 100% !important; /* Force 100% height */
+                padding: 10px 15px !important;
+                background: white !important;
+                margin: 0 !important;
+                position: relative !important;
+                top: 0 !important; /* FORCE AT TOP */
+                left: 0 !important;
+                right: 0 !important;
                 border: none !important;
                 box-shadow: none !important;
+                display: block !important;
+                overflow-y: auto !important;
                 backdrop-filter: none !important;
             }
+            
             .sidebar-mobile-header {
-                padding: 5px 10px !important;
+                display: flex !important;
+                padding: 10px 15px !important;
                 height: auto !important;
-                margin-bottom: 5px !important;
+                margin: 0 0 10px 0 !important;
                 border-bottom: 1px solid #f1f5f9 !important;
+                background: white !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 10 !important;
             }
             .products-layout .sidebar-section {
                 margin-bottom: 8px !important;
