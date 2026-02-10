@@ -712,7 +712,7 @@ const Products = () => {
              @media (max-width: 991px) {
                 .products-grid {
                    grid-template-columns: repeat(2, 1fr) !important;
-                   gap: 8px !important; 
+                   gap: 15px !important; 
                 }
                 
                 .product-card {

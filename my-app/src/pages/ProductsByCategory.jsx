@@ -162,7 +162,8 @@ const ProductsByCategory = () => {
               className="cat-products-grid"
               style={{
                 display: "grid",
-                // Grid columns handled in CSS
+                gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+                gap: "25px",
                 padding: window.innerWidth <= 767 ? "0 8px" : "0",
               }}
             >
@@ -482,8 +483,25 @@ const ProductsByCategory = () => {
             .header-content {
                 flex-direction: column;
                 text-align: center;
-            }
-          }
+            .cat-products-grid {
+                 display: grid !important;
+                 grid-template-columns: repeat(2, 1fr) !important;
+                 gap: 15px !important;
+             }
+             .product-card {
+                 border-radius: 15px !important;
+                 border: 1px solid #f1f5f9 !important;
+             }
+             .product-card a > div {
+                 height: 90px !important;
+                 padding: 6px !important;
+             }
+             .product-card h3 {
+                font-size: 0.65rem !important; 
+                height: 26px !important;
+                margin-bottom: 4px !important;
+             }
+           }
         `}
       </style>
     </div >
