@@ -94,136 +94,91 @@
     /* Force cards section */
     .about-cards,
     .about-page .about-cards {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        width: 100% !important;
+        .about-cards .about-card p {
+            font-size: 0.85rem !important;
+            line-height: 1.6 !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+            white-space: normal !important;
+            color: #64748b !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        /* Force hero section */
+        .about-hero {
+            padding: 30px 15px !important;
+        }
+
+        .about-hero h1 {
+            font-size: 1.3rem !important;
+        }
+
+        .about-hero p {
+            font-size: 0.8rem !important;
+        }
     }
 
-    /* Force about cards - STRONGER RULES */
-    .about-card,
-    .about-cards .about-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px !important;
-        box-sizing: border-box !important;
-        min-height: 150px !important;
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
+    /* ===== PRODUCTS BY CATEGORY PAGE - MATCH MAIN PRODUCT LIST ===== */
+    @media (max-width: 767px) {
 
-    /* Force card icons */
-    .card-icon-wrapper,
-    .about-card .card-icon-wrapper {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 1.3rem !important;
-        margin: 0 auto 12px !important;
-        transform: none !important;
-    }
+        /* Force product grid to 2 columns */
+        .products-layout>div:last-child>div[style*='grid'] {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 8px !important;
+            padding: 0 8px !important;
+        }
 
-    /* Force card text - MUST BE VISIBLE */
-    .about-card h3,
-    .about-cards .about-card h3 {
-        font-size: 1rem !important;
-        margin-bottom: 10px !important;
-        color: #0f172a !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        font-weight: 700 !important;
-        width: 100% !important;
-    }
+        /* Force product cards to match main list */
+        .product-card {
+            max-width: 100% !important;
+            min-height: auto !important;
+            padding: 8px !important;
+        }
 
-    .about-card p,
-    .about-cards .about-card p {
-        font-size: 0.85rem !important;
-        line-height: 1.6 !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        white-space: normal !important;
-        color: #64748b !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
+        /* Match image size to main list - 100px */
+        .product-card>div:first-child,
+        .product-card .image-container,
+        .product-card img {
+            height: 100px !important;
+            max-height: 100px !important;
+            min-height: 100px !important;
+            object-fit: cover !important;
+        }
 
-    /* Force hero section */
-    .about-hero {
-        padding: 30px 15px !important;
-    }
+        /* Compact text */
+        .product-card h3,
+        .product-card .product-title {
+            font-size: 0.75rem !important;
+            line-height: 1.2 !important;
+            margin: 4px 0 !important;
+            height: 24px !important;
+            overflow: hidden !important;
+        }
 
-    .about-hero h1 {
-        font-size: 1.3rem !important;
-    }
+        .product-card .product-price,
+        .product-card [style*='fontSize'] {
+            font-size: 0.85rem !important;
+            margin: 4px 0 !important;
+        }
 
-    .about-hero p {
-        font-size: 0.8rem !important;
-    }
-}
+        /* Compact buttons */
+        .product-card button,
+        .action-btn-primary,
+        .action-btn-secondary {
+            padding: 6px 10px !important;
+            font-size: 0.7rem !important;
+            min-height: 28px !important;
+        }
 
-/* ===== PRODUCTS BY CATEGORY PAGE - MATCH MAIN PRODUCT LIST ===== */
-@media (max-width: 767px) {
-
-    /* Force product grid to 2 columns */
-    .products-layout>div:last-child>div[style*='grid'] {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-        padding: 0 8px !important;
+        /* Hide or shrink badges */
+        .product-card .badge,
+        .badge-discount {
+            font-size: 0.6rem !important;
+            padding: 2px 6px !important;
+        }
     }
-
-    /* Force product cards to match main list */
-    .product-card {
-        max-width: 100% !important;
-        min-height: auto !important;
-        padding: 8px !important;
-    }
-
-    /* Match image size to main list - 100px */
-    .product-card>div:first-child,
-    .product-card .image-container,
-    .product-card img {
-        height: 100px !important;
-        max-height: 100px !important;
-        min-height: 100px !important;
-        object-fit: cover !important;
-    }
-
-    /* Compact text */
-    .product-card h3,
-    .product-card .product-title {
-        font-size: 0.75rem !important;
-        line-height: 1.2 !important;
-        margin: 4px 0 !important;
-        height: 24px !important;
-        overflow: hidden !important;
-    }
-
-    .product-card .product-price,
-    .product-card [style*='fontSize'] {
-        font-size: 0.85rem !important;
-        margin: 4px 0 !important;
-    }
-
-    /* Compact buttons */
-    .product-card button,
-    .action-btn-primary,
-    .action-btn-secondary {
-        padding: 6px 10px !important;
-        font-size: 0.7rem !important;
-        min-height: 28px !important;
-    }
-
-    /* Hide or shrink badges */
-    .product-card .badge,
-    .badge-discount {
-        font-size: 0.6rem !important;
-        padding: 2px 6px !important;
-    }
-}
