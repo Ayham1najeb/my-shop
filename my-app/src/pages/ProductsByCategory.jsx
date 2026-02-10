@@ -311,13 +311,13 @@ const ProductsByCategory = () => {
                     >
                       <div
                         style={{
-                          height: window.innerWidth <= 767 ? "80px" : "240px",
+                          height: window.innerWidth <= 767 ? "120px" : "240px",
                           overflow: "visible",
-                          padding: window.innerWidth <= 767 ? "10px" : "20px",
+                          padding: "0",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          background: "white",
+                          background: window.innerWidth <= 767 ? "#f8f8f8" : "white",
                           position: "relative"
                         }}
                       >
@@ -325,8 +325,8 @@ const ProductsByCategory = () => {
                           src={product.image}
                           alt={product.title}
                           style={{
-                            maxWidth: "100%",
-                            maxHeight: "100%",
+                            maxWidth: window.innerWidth <= 767 ? "90%" : "100%",
+                            maxHeight: window.innerWidth <= 767 ? "90%" : "100%",
                             width: "auto",
                             height: "auto",
                             objectFit: "contain",
