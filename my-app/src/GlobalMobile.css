@@ -18,107 +18,10 @@
         padding-right: 10px !important;
         overflow-x: hidden !important;
     }
-}
 
-/* ===== PRODUCTS PAGE MOBILE FIXES ===== */
-@media (max-width: 767px) {
-
-    /* Main Products Container */
-    .products-page-container {
-        overflow-x: hidden !important;
-        max-width: 100vw !important;
-    }
-
-    /* Hide Desktop Filters - Use Mobile Drawer */
-    .product-sidebar,
-    .filters-sidebar {
-        position: fixed !important;
-        top: 0 !important;
-        right: -100% !important;
-        height: 100vh !important;
-        width: 280px !important;
-        background: white !important;
-        z-index: 3000 !important;
-        transition: right 0.3s ease !important;
-        padding: 60px 15px 20px 15px !important;
-        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2) !important;
-        overflow-y: auto !important;
-    }
-
-    html[dir="rtl"] .product-sidebar,
-    html[dir="rtl"] .filters-sidebar {
-        right: auto !important;
-        left: -100% !important;
-        transition: left 0.3s ease !important;
-    }
-
-    .product-sidebar.open,
-    .filters-sidebar.open {
-        right: 0 !important;
-    }
-
-    html[dir="rtl"] .product-sidebar.open,
-    html[dir="rtl"] .filters-sidebar.open {
-        left: 0 !important;
-    }
-
-    /* Filters Backdrop */
-    .filters-backdrop {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 2999;
-    }
-
-    .filters-backdrop.active {
-        display: block;
-    }
-
-    /* Close Button for Filters */
-    .filters-close-btn {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        color: #333;
-        cursor: pointer;
-        z-index: 3001;
-    }
-
-    /* Product Grid */
-    .products-main-content {
-        width: 100% !important;
-        padding: 10px !important;
-    }
-
-    /* Reduce Filter Section Heights */
-    .filter-section {
-        margin-bottom: 15px !important;
-    }
-
-    .filter-section h3 {
-        font-size: 0.9rem !important;
-        margin-bottom: 8px !important;
-    }
-
-    .filter-section label {
-        font-size: 0.75rem !important;
-    }
-
-    .filter-section input {
-        font-size: 0.75rem !important;
-        padding: 6px !important;
-    }
-}
-
-/* ===== CATEGORIES PAGE MOBILE FIXES ===== */
-@media (max-width: 767px) {
-
-    /* Make Categories Square and Compact */
+    /* 1. CATEGORIES PAGE */
     .categories-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
         padding: 10px !important;
@@ -168,11 +71,8 @@
         padding: 5px 10px !important;
         margin-top: 5px !important;
     }
-}
 
-/* ===== ABOUT US PAGE MOBILE FIXES ===== */
-@media (max-width: 767px) {
-
+    /* 2. ABOUT US PAGE */
     .about-hero,
     .about-section,
     .about-container {
@@ -213,11 +113,8 @@
     .team-card p {
         font-size: 0.7rem !important;
     }
-}
 
-/* ===== CONTACT US PAGE MOBILE FIXES ===== */
-@media (max-width: 767px) {
-
+    /* 3. CONTACT US PAGE */
     .contact-container,
     .contact-wrapper {
         padding: 20px 15px !important;
@@ -265,12 +162,12 @@
     .contact-info-item h3 {
         font-size: 0.85rem !important;
     }
+
+    /* 4. NAVBAR / BURGER MENU FIX */
 }
 
-/* ===== NAVBAR / BURGER MENU FIX ===== */
 @media (max-width: 900px) {
 
-    /* Ensure Burger Menu Doesn't Freeze */
     .mobile-toggle,
     .burger-icon {
         cursor: pointer !important;
@@ -279,79 +176,79 @@
         -webkit-tap-highlight-color: transparent !important;
     }
 
-    /* Prevent Body Scroll When Menu Open */
     body.menu-open {
         overflow: hidden !important;
     }
 }
-/* ===== HERO SLIDER MOBILE FIXES ===== */
+
+/* 5. HERO SLIDER MOBILE FIXES */
 @media (max-width: 767px) {
     .hero-slider-wrapper {
         margin-top: 10px !important;
         padding: 0 5px !important;
     }
-    
+
     .hero-slide-content {
         min-height: 200px !important;
         border-radius: 12px !important;
         padding: 10px !important;
     }
-    
+
     .hero-image {
         height: 100px !important;
         width: 100% !important;
     }
-    
+
     .hero-image img {
         max-height: 100% !important;
         object-fit: contain !important;
     }
-    
+
     .hero-text h1 {
         font-size: 1.1rem !important;
     }
-    
+
     .hero-text p {
         font-size: 0.75rem !important;
     }
-    
+
     .hero-btn {
         padding: 6px 14px !important;
         font-size: 0.75rem !important;
     }
 }
 
-/* ===== CATEGORIES CARD HEIGHT FIX ===== */
+/* 6. CATEGORIES CARD HEIGHT FIX */
 @media (max-width: 767px) {
     .category-card.holo-interactive {
         height: 140px !important;
         border-radius: 16px !important;
     }
-    
+
     .cat-overlay {
         padding: 15px !important;
     }
-    
+
     .cat-icon-box {
         width: 40px !important;
         height: 40px !important;
         margin-bottom: 10px !important;
     }
-    
+
     .cat-name {
         font-size: 0.85rem !important;
     }
-    
+
     .categories-container {
         padding: 40px 0 !important;
     }
-    
+
     .categories-container .section-title {
         font-size: 1.3rem !important;
     }
 }
 
-/* ===== PRODUCTS FILTER/SORT MOBILE FIXES ===== */
+/* 7. PRODUCTS FILTER/SORT MOBILE FIXES */
 @media (max-width: 767px) {
     .sort-wrapper select {
         min-width: 120px !important;
@@ -359,7 +256,7 @@
         padding: 8px 12px !important;
         font-size: 0.75rem !important;
     }
-    
+
     .sort-wrapper span {
         font-size: 0.75rem !important;
     }
