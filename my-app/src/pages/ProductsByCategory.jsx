@@ -343,7 +343,7 @@ const ProductsByCategory = () => {
 
                     <div
                       style={{
-                        padding: "20px",
+                        padding: window.innerWidth <= 767 ? "12px" : "20px",
                         flexGrow: 1,
                         display: "flex",
                         flexDirection: "column",
