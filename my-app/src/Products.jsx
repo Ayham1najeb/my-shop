@@ -666,17 +666,17 @@ const Products = () => {
                opacity: 1 !important;
             }
             
-            /* Drawer Content - SOFT AND SMALL */
+            /* Drawer Content - SOFT AND SMALL (EVEN SLIMMER) */
             .product-sidebar-container > * {
-                width: 78% !important; 
-                max-width: 320px !important;
+                width: 72% !important; 
+                max-width: 280px !important;
                 height: 100% !important;
                 background: white !important;
                 transform: translateX(${language === 'ar' ? '-100%' : '100%'}) !important;
                 transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                 overflow-y: auto !important;
                 box-shadow: -10px 0 30px rgba(0,0,0,0.2) !important;
-                padding-top: 10px !important;
+                padding-top: 5px !important;
             }
             
             .product-sidebar-container.active > * {
@@ -690,25 +690,31 @@ const Products = () => {
             /* Ultra-Compact Filter Items Specificity */
             .products-layout .product-sidebar-container .product-sidebar {
                 min-width: 100% !important; 
-                padding: 10px !important;
+                padding: 8px 10px !important;
                 background: white !important;
             }
             .sidebar-mobile-header {
-                padding: 0 15px !important;
+                padding: 0 10px !important;
+                height: 35px !important;
             }
             .products-layout .sidebar-section {
-                margin-bottom: 12px !important;
-                padding-bottom: 10px !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 8px !important;
             }
             .products-layout .sidebar-title {
-                font-size: 0.8rem !important;
-                margin-bottom: 8px !important;
+                font-size: 0.75rem !important;
+                margin-bottom: 6px !important;
             }
             .products-layout .custom-checkbox {
-                font-size: 0.75rem !important;
+                font-size: 0.7rem !important;
+                margin-bottom: 4px !important;
             }
             .products-layout .scrollable-list {
-                max-height: 140px !important;
+                max-height: 130px !important;
+                gap: 4px !important;
+            }
+            .products-layout .sidebar-icon {
+                font-size: 0.75rem !important;
             }
 
              @media (max-width: 991px) {
