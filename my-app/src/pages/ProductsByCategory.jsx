@@ -274,8 +274,9 @@ const ProductsByCategory = () => {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-                gap: "25px",
+                gridTemplateColumns: window.innerWidth <= 767 ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(250px, 1fr))",
+                gap: window.innerWidth <= 767 ? "12px" : "25px",
+                padding: window.innerWidth <= 767 ? "0 8px" : "0",
               }}
             >
               {filteredProducts.map((product) => {
@@ -310,9 +311,9 @@ const ProductsByCategory = () => {
                     >
                       <div
                         style={{
-                          height: "240px",
+                          height: window.innerWidth <= 767 ? "120px" : "240px",
                           overflow: "hidden",
-                          padding: "20px",
+                          padding: window.innerWidth <= 767 ? "10px" : "20px",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
