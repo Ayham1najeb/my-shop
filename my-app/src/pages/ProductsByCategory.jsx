@@ -311,7 +311,7 @@ const ProductsByCategory = () => {
                     >
                       <div
                         style={{
-                          height: window.innerWidth <= 767 ? "100px" : "240px",
+                          height: window.innerWidth <= 767 ? "60px" : "240px",
                           overflow: "hidden",
                           padding: window.innerWidth <= 767 ? "8px" : "20px",
                           display: "flex",
