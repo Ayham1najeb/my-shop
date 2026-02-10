@@ -144,16 +144,23 @@
         height: 140px !important;
         /* Fixed height for consistency */
         background: #f8f8f8 !important;
-        padding: 10px !important;
+        padding: 5px !important;
+        /* Reduced padding */
         border-radius: 10px 10px 0 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
+    /* MORE SPECIFIC SELECTOR TO WIN AGAINST GENERIC .product-card img */
+    .cat-products-grid .product-card .cat-product-img,
     .cat-product-img {
         width: 100% !important;
         height: 100% !important;
+        max-height: 100% !important;
+        /* Override the 100px limit */
         object-fit: contain !important;
         mix-blend-mode: multiply !important;
-        /* Helps image blend with grey bg if white bg exists */
     }
 
     /* Override padding in content area */
