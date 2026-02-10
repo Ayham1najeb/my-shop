@@ -432,6 +432,105 @@
         top: 8px !important;
         right: 8px !important;
     }
+
+    /* 6. CART DRAWER (THE POPUP AFTER ADDING PRODUCT) */
+    .cart-drawer {
+        width: 85% !important;
+        /* Use percentage as requested */
+        max-width: 85% !important;
+    }
+
+    .drawer-header {
+        padding: 12px 15px !important;
+    }
+
+    .drawer-header h3 {
+        font-size: 1rem !important;
+    }
+
+    .item-count {
+        font-size: 0.85rem !important;
+    }
+
+    .header-total {
+        font-size: 1rem !important;
+    }
+
+    .drawer-body {
+        padding: 12px 15px !important;
+    }
+
+    .drawer-card {
+        gap: 12px !important;
+        padding-bottom: 12px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .card-image-container {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .card-details h4 {
+        font-size: 0.85rem !important;
+        -webkit-line-clamp: 1 !important;
+        /* Show only one line */
+    }
+
+    .card-price {
+        font-size: 0.9rem !important;
+    }
+
+    .quantity-controls {
+        gap: 6px !important;
+        padding: 2px 6px !important;
+    }
+
+    .quantity-controls button {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 12px !important;
+    }
+
+    .delete-btn {
+        font-size: 0.75rem !important;
+    }
+
+    .drawer-footer {
+        padding: 15px !important;
+    }
+
+    .footer-total span {
+        font-size: 0.9rem !important;
+    }
+
+    .footer-total h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .checkout-btn {
+        padding: 12px !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+
+    /* REFINING CART/WISHLIST WITH PERCENTAGES WHERE POSSIBLE */
+    .cart-breadcrumb {
+        width: 95% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .cart-header,
+    .cart-item-card,
+    .cart-summary {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .wishlist-container {
+        width: 95% !important;
+    }
 }
 
 /* DESKTOP DEFAULTS (Safe fallback) */
