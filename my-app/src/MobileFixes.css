@@ -262,6 +262,16 @@
         min-height: 26px !important;
     }
 
+    /* 3.5 HOME PAGE FEATURED PRODUCTS - WISHLIST ICON */
+    .card-favorite-btn {
+        top: 5px !important;
+        left: 5px !important;
+        /* Shifted more to the left/corner */
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.85rem !important;
+    }
+
     /* 4. CART PAGE OPTIMIZATION */
     .cart-page {
         padding: 20px 10px !important;
