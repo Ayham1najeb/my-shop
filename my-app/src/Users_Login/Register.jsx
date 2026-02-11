@@ -39,8 +39,7 @@ const Register = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
-          "ngrok-skip-browser-warning": "1"
+          "Accept": "application/json"
         },
         body: JSON.stringify({
           name,

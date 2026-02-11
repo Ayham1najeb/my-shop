@@ -55,8 +55,7 @@ const Profile = () => {
                 const profileRes = await fetch(`${API_URL}/api/profile`, {
                     headers: {
                         "Authorization": `Bearer ${token}`,
-                        "Accept": "application/json",
-                        "ngrok-skip-browser-warning": "1"
+                        "Accept": "application/json"
                     }
                 });
 
@@ -72,8 +71,7 @@ const Profile = () => {
                 const ordersRes = await fetch(`${API_URL}/api/orders`, {
                     headers: {
                         "Authorization": `Bearer ${token} `,
-                        "Accept": "application/json",
-                        "ngrok-skip-browser-warning": "1"
+                        "Accept": "application/json"
                     }
                 });
 
@@ -119,8 +117,7 @@ const Profile = () => {
                     method: "POST",
                     headers: {
                         "Authorization": `Bearer ${token} `,
-                        "Accept": "application/json",
-                        "ngrok-skip-browser-warning": "1"
+                        "Accept": "application/json"
                     },
                     body: formDataToSend
                 });
@@ -156,8 +153,7 @@ const Profile = () => {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token} `,
-                    "Accept": "application/json",
-                    "ngrok-skip-browser-warning": "1"
+                    "Accept": "application/json"
                 },
                 body: formDataToSend
             });
@@ -186,8 +182,7 @@ const Profile = () => {
                 headers: {
                     "Authorization": `Bearer ${token} `,
                     "Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "ngrok-skip-browser-warning": "1"
+                    "Accept": "application/json"
                 },
                 body: JSON.stringify(passData)
             });
