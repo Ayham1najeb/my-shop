@@ -47,7 +47,7 @@ export const ProductProvider = ({ children }) => {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
             'Pragma': 'no-cache',
             'Expires': '0',
-            'ngrok-skip-browser-warning': '1'
+            'ngrok-skip-browser-warning': '69420'
           }
         });
         if (!response.ok) {
@@ -133,7 +133,7 @@ export const ProductProvider = ({ children }) => {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Accept": "application/json",
-          "ngrok-skip-browser-warning": "1"
+          "ngrok-skip-browser-warning": "69420"
         }
       })
         .then(res => res.json())
@@ -168,7 +168,7 @@ export const ProductProvider = ({ children }) => {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "ngrok-skip-browser-warning": "1"
+        "ngrok-skip-browser-warning": "69420"
       },
       body: JSON.stringify({ product_id: product.id })
     }).catch(err => console.error("Sync error", err));
@@ -187,7 +187,7 @@ export const ProductProvider = ({ children }) => {
         "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "ngrok-skip-browser-warning": "1"
+        "ngrok-skip-browser-warning": "69420"
       },
       body: JSON.stringify({ product_id: productId })
     }).catch(err => console.error("Sync error", err));
