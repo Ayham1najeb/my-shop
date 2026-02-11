@@ -1,3 +1,3 @@
-const API_URL = "https://2d414502bd59a890-92-44-31-199.serveousercontent.com";
+const API_URL = "https://dc2c82bd53d42e77-92-44-31-199.serveousercontent.com";
 
 export default API_URL;
