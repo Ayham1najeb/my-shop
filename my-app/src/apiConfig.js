@@ -1,3 +1,3 @@
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_URL = "https://pantomimic-emilio-solicitously.ngrok-free.dev";
 
 export default API_URL;
