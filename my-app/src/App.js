@@ -27,6 +27,8 @@ import AdminDashboard from './admin/pages/DashboardHome';
 import AdminOrders from './admin/pages/AdminOrders';
 import UsersManager from './admin/pages/UsersManager';
 import AddProduct from './admin/pages/AddProduct';
+import ManageProducts from './admin/pages/ManageProducts';
+import EditProduct from './admin/pages/EditProduct';
 import ManageReviews from './admin/pages/ManageReviews';
 import Settings from './admin/pages/Settings';
 import AdminLayout from './admin/components/AdminLayout';
@@ -109,9 +111,19 @@ function App() {
                   <UsersManager />
                 </AdminLayout>
               } />
+              <Route path="/admin/products" element={
+                <AdminLayout>
+                  <ManageProducts />
+                </AdminLayout>
+              } />
               <Route path="/admin/products/create" element={
                 <AdminLayout>
                   <AddProduct />
+                </AdminLayout>
+              } />
+              <Route path="/admin/products/edit/:id" element={
+                <AdminLayout>
+                  <EditProduct />
                 </AdminLayout>
               } />
               <Route path="/admin/reviews" element={

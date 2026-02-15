@@ -1,3 +1,3 @@
-const API_URL = "https://3d80158f9e9686b7-92-44-31-199.serveousercontent.com";
+const API_URL = "https://pantomimic-emilio-solicitously.ngrok-free.dev";
 
 export default API_URL;

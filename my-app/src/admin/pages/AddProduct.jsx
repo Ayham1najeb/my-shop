@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FaUpload, FaPlus, FaTrash, FaSave, FaImage, FaLayerGroup, FaInfoCircle, FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { FaUpload, FaPlus, FaTrash, FaSave, FaImage, FaLayerGroup } from 'react-icons/fa';
 import API_URL from '../../apiConfig';
 import './Admin.css';
 
 const AddProduct = () => {
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [helpers, setHelpers] = useState({ categories: [], brands: [], colors: [], sizes: [] });
 
@@ -15,6 +17,8 @@ const AddProduct = () => {
         price: '',
         category_id: '',
         brand_id: '',
+        is_active: 1, // Default to true
+        is_featured: 0,
         images: [], // File objects
     });
 
@@ -27,8 +31,8 @@ const AddProduct = () => {
         const fetchData = async () => {
             const token = localStorage.getItem('auth_token');
             try {
-                const res = await fetch(`${API_URL} /api/admin / products / form - data`, {
-                    headers: { "Authorization": `Bearer ${token} ` }
+                const res = await fetch(`${API_URL}/api/admin/products/form-data`, {
+                    headers: { "Authorization": `Bearer ${token}` }
                 });
                 const data = await res.json();
                 setHelpers(data);
@@ -107,16 +111,16 @@ const AddProduct = () => {
 
         try {
             const token = localStorage.getItem('auth_token');
-            const res = await fetch(`${API_URL} /api/admin / products`, {
+            const res = await fetch(`${API_URL}/api/admin/products`, {
                 method: "POST",
-                headers: { "Authorization": `Bearer ${token} ` },
+                headers: { "Authorization": `Bearer ${token}` },
                 body: formData
             });
             const data = await res.json();
 
             if (res.ok) {
                 alert("تم إضافة المنتج بنجاح!");
-                window.location.reload(); // Quick reset
+                navigate('/admin/products');
             } else {
                 alert("خطأ: " + JSON.stringify(data.errors || data.message));
             }
@@ -128,15 +132,15 @@ const AddProduct = () => {
     };
 
     return (
-        <div className="admin-page-container">
-            <div className="page-header-flex">
-                <div style={{ flex: 1 }}>
+        <div className="dashboard-home">
+            <div className="dashboard-header-flex">
+                <div className="header-title">
                     <h1>إضافة منتج جديد</h1>
-                    <p style={{ color: '#64748b', marginTop: '5px' }}>أدخل تفاصيل المنتج بدقة لضمان عرض احترافي</p>
+                    <p className="subtitle">أدخل تفاصيل المنتج بدقة لضمان عرض احترافي</p>
                 </div>
-                <div style={{ display: 'flex', gap: '10px' }}>
-                    <button className="btn-secondary" onClick={() => window.history.back()} style={{ background: 'white', border: '1px solid #e2e8f0', color: '#64748b', padding: '10px 20px', borderRadius: '10px', cursor: 'pointer', fontWeight: 'bold' }}>إلغاء</button>
-                    <button onClick={handleSubmit} className="btn-primary" disabled={loading} style={{ width: 'auto' }}>
+                <div className="header-actions">
+                    <button className="btn-refresh" onClick={() => window.history.back()}>إلغاء</button>
+                    <button onClick={handleSubmit} className="btn-primary-sm" disabled={loading}>
                         {loading ? 'جاري الحفظ...' : <><FaSave /> حفظ المنتج</>}
                     </button>
                 </div>
@@ -271,6 +275,35 @@ const AddProduct = () => {
                             <div className="input-group">
                                 <label>السعر الأساسي ($)</label>
                                 <input name="price" value={product.price} type="number" step="0.01" placeholder="0.00" style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#10b981' }} onChange={handleInputChange} required />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Status */}
+                    <div className="card">
+                        <div className="card-header">
+                            <h3>الحالة</h3>
+                        </div>
+                        <div className="card-body">
+                            <div className="input-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <input
+                                    type="checkbox"
+                                    name="is_active"
+                                    id="is_active"
+                                    checked={parseInt(product.is_active) === 1}
+                                    onChange={(e) => setProduct({ ...product, is_active: e.target.checked ? 1 : 0 })}
+                                />
+                                <label htmlFor="is_active" style={{ margin: 0, cursor: 'pointer' }}>منتج نشط (يظهر في الموقع)</label>
+                            </div>
+                            <div className="input-group" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '10px' }}>
+                                <input
+                                    type="checkbox"
+                                    name="is_featured"
+                                    id="is_featured"
+                                    checked={parseInt(product.is_featured) === 1}
+                                    onChange={(e) => setProduct({ ...product, is_featured: e.target.checked ? 1 : 0 })}
+                                />
+                                <label htmlFor="is_featured" style={{ margin: 0, cursor: 'pointer' }}>منتج مميز</label>
                             </div>
                         </div>
                     </div>

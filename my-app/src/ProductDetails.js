@@ -36,7 +36,11 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/products/${id}`);
+        const response = await fetch(`${API_URL}/api/products/${id}`, {
+          headers: {
+            'ngrok-skip-browser-warning': 'true'
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           setProduct(data);

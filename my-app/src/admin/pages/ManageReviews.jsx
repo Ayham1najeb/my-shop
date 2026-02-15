@@ -50,6 +50,29 @@ const ManageReviews = () => {
         }
     };
 
+    const deleteReview = async (id) => {
+        if (!window.confirm("هل أنت متأكد أنك تريد حذف هذا التقييم؟ لا يمكن التراجع عن هذا الإجراء.")) return;
+
+        try {
+            const token = localStorage.getItem('auth_token');
+            const response = await fetch(`${API_URL}/api/admin/reviews/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (response.ok) {
+                // Remove from local state immediately for faster UI feedback
+                setReviews(reviews.filter(r => r.id !== id));
+            } else {
+                alert("فشل الحذف");
+            }
+        } catch (error) {
+            console.error("Error deleting review", error);
+        }
+    };
+
     if (loading) return <div className="loading">Loading Reviews...</div>;
 
     return (
@@ -89,6 +112,21 @@ const ManageReviews = () => {
                                         {rev.status !== 'rejected' && (
                                             <button className="btn-reject" onClick={() => updateStatus(rev.id, 'rejected')}>رفض</button>
                                         )}
+                                        <button
+                                            className="btn-delete"
+                                            onClick={() => deleteReview(rev.id)}
+                                            style={{
+                                                backgroundColor: '#ef4444',
+                                                color: 'white',
+                                                padding: '5px 10px',
+                                                border: 'none',
+                                                borderRadius: '4px',
+                                                cursor: 'pointer',
+                                                marginLeft: '5px'
+                                            }}
+                                        >
+                                            حذف
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

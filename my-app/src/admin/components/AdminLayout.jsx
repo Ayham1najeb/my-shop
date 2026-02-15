@@ -38,6 +38,9 @@ const AdminLayout = ({ children }) => {
                     <NavLink to="/admin/users" className={({ isActive }) => isActive ? 'admin-nav-item active' : 'admin-nav-item'} onClick={closeSidebar}>
                         <FaUsers /> <span>المستخدمين</span>
                     </NavLink>
+                    <NavLink to="/admin/products" className={({ isActive }) => isActive ? 'admin-nav-item active' : 'admin-nav-item'} onClick={closeSidebar} end>
+                        <FaClipboardList /> <span>إدارة المنتجات</span>
+                    </NavLink>
                     <NavLink to="/admin/products/create" className={({ isActive }) => isActive ? 'admin-nav-item active' : 'admin-nav-item'} onClick={closeSidebar}>
                         <FaPlus /> <span>إضافة منتج</span>
                     </NavLink>

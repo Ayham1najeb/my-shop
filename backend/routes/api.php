@@ -46,7 +46,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/notifications/{id}', [App\Http\Controllers\Api\NotificationController::class, 'destroy']);
 
     // Admin Routes
-    Route::prefix('admin')->group(function () {
+    Route::prefix('admin')->middleware([\App\Http\Middleware\RestrictGuestAdmin::class])->group(function () {
         Route::get('/stats', [App\Http\Controllers\Api\Admin\StatsController::class, 'index']);
         
         Route::get('/products/form-data', [App\Http\Controllers\Api\Admin\ProductController::class, 'getFormData']);
@@ -59,6 +59,7 @@ Route::middleware('auth:sanctum')->group(function () {
         // Admin Reviews
         Route::get('/reviews', [App\Http\Controllers\Api\Admin\ReviewController::class, 'index']);
         Route::post('/reviews/{id}/status', [App\Http\Controllers\Api\Admin\ReviewController::class, 'updateStatus']);
+        Route::delete('/reviews/{id}', [App\Http\Controllers\Api\Admin\ReviewController::class, 'destroy']);
 
         // Admin Orders
         Route::get('/orders', [App\Http\Controllers\Api\Admin\OrderController::class, 'index']);
