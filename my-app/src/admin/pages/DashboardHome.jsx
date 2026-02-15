@@ -61,12 +61,27 @@ const DashboardHome = () => {
     const fetchStats = async () => {
         setIsLoading(true);
         const token = localStorage.getItem('auth_token');
+        if (!token) {
+            console.error("No auth token found");
+            setIsLoading(false);
+            return;
+        }
+
         try {
             const res = await fetch(`${API_URL}/api/admin/stats?t=${new Date().getTime()}`, {
-                headers: { "Authorization": `Bearer ${token}` }
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Accept": "application/json",
+                    "ngrok-skip-browser-warning": "true"
+                }
             });
+
+            if (!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
             const data = await res.json();
-            if (data) {
+            if (data && typeof data === 'object') {
                 setStats(prev => ({
                     ...prev,
                     total_users: data.total_users || 0,
@@ -75,10 +90,10 @@ const DashboardHome = () => {
                     total_revenue: data.total_revenue || 0,
                     aov: data.aov || 0,
                     conversion_rate: data.conversion_rate || 0,
-                    recent_activities: data.recent_activities || [],
-                    top_selling_products: data.top_selling_products || [],
-                    order_status: data.order_status || [],
-                    sales_data: data.sales_data || [],
+                    recent_activities: Array.isArray(data.recent_activities) ? data.recent_activities : [],
+                    top_selling_products: Array.isArray(data.top_selling_products) ? data.top_selling_products : [],
+                    order_status: Array.isArray(data.order_status) ? data.order_status : [],
+                    sales_data: Array.isArray(data.sales_data) ? data.sales_data : [],
                     daily_visits: data.daily_visits || 0,
                     monthly_visits: data.monthly_visits || 0,
                     today_orders: data.today_orders || 0,

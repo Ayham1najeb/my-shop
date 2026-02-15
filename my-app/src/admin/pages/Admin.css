@@ -25,16 +25,14 @@
 /* Force Admin Layout to be RTL and Full Screen */
 /* Force Admin Layout to be RTL and Full Screen */
 .admin-layout {
-    position: absolute;
-    /* Changed from fixed to absolute to allow scroll */
-    top: 0;
-    left: 0;
+    position: relative;
+    /* Changed from absolute/fixed to relative for better mobile stability */
     width: 100%;
     min-height: 100vh;
     background: var(--bg-main);
-    z-index: 9999;
     display: flex;
     direction: rtl;
+    overflow-x: hidden;
 }
 
 /* Sidebar - Pinned to Right */
@@ -178,8 +176,17 @@
 /* Content Area - Naturally Scrollable */
 .admin-content {
     flex: 1;
-    padding: 2rem;
+    padding: 1.5rem;
+    /* Reduced padding for mobile */
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .admin-content {
+        padding: 2rem;
+    }
 }
 
 .page-header-flex {
@@ -1436,6 +1443,7 @@ h1 {
 .spin {
     animation: spin 1s linear infinite;
 }
+
 /* Product Management Specific Styles */
 .manage-products-page {
     animation: fadeIn 0.5s ease;
@@ -1608,4 +1616,3 @@ h1 {
     color: var(--text-sub);
     font-family: Cairo, sans-serif;
 }
-
